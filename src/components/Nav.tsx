@@ -27,10 +27,11 @@ export default function Nav() {
 
   return (
     <motion.header
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, willChange: 'auto' }}
+      className={`z-50 transition-all duration-500 ${
         scrolled
           ? 'backdrop-blur-xl bg-ink/80 hairline-b'
           : 'bg-transparent'

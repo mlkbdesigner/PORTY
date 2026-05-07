@@ -99,14 +99,6 @@ export default function Contato() {
               ))}
             </div>
 
-            {/* Location + time — pushed to bottom to align with form's submit row */}
-            <div className="mt-auto p-6 border border-white/15 bg-neutral/40">
-              <p className="font-label text-white-mute mb-3">LOCALIZAÇÃO</p>
-              <p className="font-display text-2xl text-white mb-1">
-                Recife <span className="italic text-pink">· Brasil</span>
-              </p>
-              <p className="text-sm text-white-dim">GMT-3 · Disponível em horário comercial</p>
-            </div>
           </motion.div>
 
           {/* Right — Form */}

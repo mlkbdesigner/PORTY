@@ -24,7 +24,7 @@ export default function Hero() {
           decoding="async"
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover select-none"
-          style={{ filter: 'brightness(0.85) saturate(1.1) blur(2px)', objectPosition: '50% 20%' }}
+          style={{ filter: 'brightness(0.85) saturate(1.1) blur(2px)', objectPosition: '85% 20%' }}
         />
         {/* Top + bottom gradients for text legibility only */}
         <div
@@ -64,7 +64,7 @@ export default function Hero() {
         decoding="async"
         fetchPriority="high"
         className="absolute inset-0 z-[2] w-full h-full object-cover pointer-events-none select-none"
-        style={{ objectPosition: '50% 20%' }}
+        style={{ objectPosition: '85% 20%' }}
       />
 
       {/* ========= LAYER 3 — MALU KLEIN OUTLINE (in front of everything) ========= */}
