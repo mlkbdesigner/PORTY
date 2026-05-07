@@ -166,7 +166,7 @@ export default function Portfolio() {
             <h1
               className="font-humane uppercase text-pink leading-[0.82] text-center"
               style={{
-                fontSize: 'clamp(6rem, 18vw, 22rem)',
+                fontSize: 'clamp(3.5rem, 18vw, 22rem)',
                 letterSpacing: '0.025em',
               }}
             >

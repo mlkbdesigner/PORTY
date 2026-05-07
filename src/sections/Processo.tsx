@@ -129,9 +129,25 @@ export default function Processo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, delay: i * 0.2, ease }}
-                className={`relative ${i > 0 ? 'md:border-l' : ''} border-white/15 p-6 md:p-10 pt-16 md:pt-20 group flex flex-col h-full overflow-x-clip`}
+                className={`relative ${i > 0 ? 'md:border-l' : ''} border-white/15 pl-10 pr-6 py-6 md:p-10 pt-16 md:pt-20 group flex flex-col h-full overflow-x-clip`}
               >
-                {/* Timeline dot marker — sits on the lime line */}
+                {/* Mobile-only vertical timeline line (left edge) */}
+                <span
+                  aria-hidden="true"
+                  className="md:hidden absolute left-3 top-0 bottom-0 w-[2px] bg-lime/30"
+                />
+
+                {/* Mobile-only timeline dot per card */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease }}
+                  className="md:hidden absolute left-[5px] top-16 w-3 h-3 rounded-full bg-lime border-2 border-ink shadow-[0_0_12px_rgba(155,232,0,0.8)] z-10"
+                  aria-hidden="true"
+                />
+
+                {/* Desktop-only timeline dot marker — sits on horizontal lime line */}
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -144,9 +160,9 @@ export default function Processo() {
                 {/* Huge faded number watermark */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -right-4 top-12 md:top-16 font-humane text-white/[0.06] leading-none select-none transition-all duration-700 group-hover:text-lime/[0.10]"
+                  className="pointer-events-none absolute right-2 md:-right-4 top-12 md:top-16 font-humane text-white/[0.06] leading-none select-none transition-all duration-700 group-hover:text-lime/[0.10]"
                   style={{
-                    fontSize: 'clamp(8rem, 12vw, 13rem)',
+                    fontSize: 'clamp(5rem, 18vw, 13rem)',
                     letterSpacing: '0.025em',
                   }}
                 >

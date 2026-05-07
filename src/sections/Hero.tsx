@@ -23,8 +23,8 @@ export default function Hero() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover select-none"
-          style={{ objectPosition: 'center 30%', filter: 'brightness(0.85) saturate(1.1) blur(2px)' }}
+          className="absolute inset-0 w-full h-full object-cover select-none object-[center_center] md:object-[center_30%]"
+          style={{ filter: 'brightness(0.85) saturate(1.1) blur(2px)' }}
         />
         {/* Top + bottom gradients for text legibility only */}
         <div
@@ -63,8 +63,7 @@ export default function Hero() {
         loading="eager"
         decoding="async"
         fetchPriority="high"
-        className="absolute inset-0 z-[2] w-full h-full object-cover pointer-events-none select-none"
-        style={{ objectPosition: 'center 30%' }}
+        className="absolute inset-0 z-[2] w-full h-full object-cover pointer-events-none select-none object-[center_center] md:object-[center_30%]"
       />
 
       {/* ========= LAYER 3 — MALU KLEIN OUTLINE (in front of everything) ========= */}
