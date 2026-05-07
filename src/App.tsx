@@ -3,6 +3,7 @@ import SmoothScroll from './components/SmoothScroll'
 import SkillsMarquee from './components/SkillsMarquee'
 import Hero from './sections/Hero'
 import Sobre from './sections/Sobre'
+import Arsenal from './sections/Arsenal'
 import Portfolio from './sections/Portfolio'
 import Servicos from './sections/Servicos'
 import Processo from './sections/Processo'
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <SkillsMarquee />
         <Sobre />
+        <Arsenal />
         <Portfolio />
         <Servicos />
         <Processo />

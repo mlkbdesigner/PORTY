@@ -36,34 +36,34 @@ export default function Contato() {
           </div>
         </div>
 
-        {/* Big headline */}
-        <div className="mb-20">
-          <h2 className="font-display text-[clamp(3rem,10vw,11rem)] leading-[0.88] text-white">
-            <div className="overflow-hidden">
-              <motion.span
-                initial={{ y: '110%' }}
-                whileInView={{ y: '0%' }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.1, ease, delay: 0.1 }}
-                className="block"
-              >
-                Vamos criar
-              </motion.span>
-            </div>
-            <div className="overflow-hidden">
-              <motion.span
-                initial={{ y: '110%' }}
-                whileInView={{ y: '0%' }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.1, ease, delay: 0.25 }}
-                className="block italic"
-              >
-                <span className="text-lime">algo</span>
-                <span className="text-white"> </span>
-                <span className="text-pink">juntos?</span>
-              </motion.span>
-            </div>
-          </h2>
+        {/* Big headline — left aligned, brutalist */}
+        <div className="mb-16 md:mb-20 text-left">
+          <h1
+            className="font-humane uppercase text-pink leading-[0.82]"
+            style={{
+              fontSize: 'clamp(4rem, 12vw, 14rem)',
+              letterSpacing: '0.025em',
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 1.1, ease, delay: 0.15 }}
+              className="block"
+            >
+              Vamos criar
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 1.1, ease, delay: 0.35 }}
+              className="block text-white -mt-[0.18em]"
+            >
+              algo juntos?
+            </motion.div>
+          </h1>
         </div>
 
         <div className="grid md:grid-cols-12 gap-10 md:gap-16">

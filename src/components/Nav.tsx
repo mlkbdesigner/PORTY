@@ -1,5 +1,6 @@
 import { motion, useScroll, useMotionValueEvent } from 'motion/react'
 import { useState } from 'react'
+import Logo from './Logo'
 
 const links = [
   { label: 'Sobre', href: '#sobre' },
@@ -42,9 +43,7 @@ export default function Nav() {
         >
         {/* Logo */}
         <a href="#top" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 border border-white/20 flex items-center justify-center group-hover:border-lime group-hover:bg-lime group-hover:text-ink transition-all duration-300">
-            <span className="font-display italic text-lg leading-none">m</span>
-          </div>
+          <Logo className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
           <div className="hidden sm:block leading-none">
             <div className="font-label text-white">MALU KLEIN</div>
             <div className="font-label text-white-mute mt-1 text-[0.6rem]">DESIGNER · MLKB</div>

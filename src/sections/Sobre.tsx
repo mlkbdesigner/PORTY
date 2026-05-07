@@ -125,40 +125,6 @@ export default function Sobre() {
           ))}
         </div>
 
-        {/* Tools */}
-        <Reveal delay={0.1}>
-          <div>
-            <div className="flex items-center justify-between mb-8">
-              <div className="flex items-center gap-3 font-label text-white-mute">
-                <span className="w-6 h-px bg-white-mute" />
-                <span>FERRAMENTAS DO DIA A DIA</span>
-              </div>
-              <span className="font-label text-white-mute hidden md:inline">08 ITENS</span>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 border-t border-l border-white/15">
-              {tools.map((tool, i) => (
-                <motion.div
-                  key={tool.name}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.06 }}
-                  className="p-6 border-r border-b border-white/15 flex items-center justify-between hover:bg-neutral transition-colors group"
-                >
-                  <div>
-                    <div className="font-display text-2xl text-white group-hover:text-lime transition-colors">
-                      {tool.name}
-                    </div>
-                    <div className="font-label text-white-mute mt-1">{tool.cat}</div>
-                  </div>
-                  <span className="text-white-mute group-hover:text-lime group-hover:translate-x-1 transition-all">
-                    ◆
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

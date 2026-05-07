@@ -44,54 +44,55 @@ export default function Servicos() {
       <div className="absolute inset-0 grid-lines opacity-40 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-20">
-        {/* Section header */}
-        <div className="flex items-center justify-between mb-10 font-label text-white-dim">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-px bg-lime" />
-            <span className="text-lime">[ 04 ]</span>
-            <span>SERVIÇOS</span>
-          </div>
-          <span className="hidden md:inline">03 ESPECIALIDADES</span>
+        {/* Section eyebrow */}
+        <div className="flex items-center gap-3 mb-10 font-label text-white-dim">
+          <span className="w-8 h-px bg-lime" />
+          <span className="text-lime">[ 04 ]</span>
+          <span>SERVIÇOS</span>
         </div>
 
-        {/* Title */}
-        <div className="mb-16 md:mb-20 grid md:grid-cols-12 gap-8 items-end">
-          <div className="md:col-span-8">
-            <h2 className="font-display text-[clamp(2.8rem,7vw,7rem)] leading-[0.92] text-white">
-              <div className="overflow-hidden">
-                <motion.span
-                  initial={{ y: '110%' }}
-                  whileInView={{ y: '0%' }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 1.1, ease, delay: 0.1 }}
-                  className="block"
-                >
-                  O que eu
-                </motion.span>
-              </div>
-              <div className="overflow-hidden">
-                <motion.span
-                  initial={{ y: '110%' }}
-                  whileInView={{ y: '0%' }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 1.1, ease, delay: 0.25 }}
-                  className="block italic text-pink"
-                >
-                  faço melhor.
-                </motion.span>
-              </div>
-            </h2>
+        {/* Header */}
+        <div className="mb-16 md:mb-24">
+          <div>
+            <h1
+              className="font-humane uppercase text-pink leading-[0.82]"
+              style={{
+                fontSize: 'clamp(4rem, 11vw, 13rem)',
+                letterSpacing: '0.025em',
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 1.1, ease, delay: 0.15 }}
+                className="block"
+              >
+                O que eu
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 1.1, ease, delay: 0.35 }}
+                className="block text-white -mt-[0.18em]"
+              >
+                faço melhor.
+              </motion.div>
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="mt-8 max-w-md text-lg text-white-dim text-pretty"
+            >
+              Três frentes principais, sempre com{' '}
+              <span className="text-white">estratégia primeiro</span>, estética depois.
+            </motion.p>
           </div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="md:col-span-4 text-lg text-white-dim text-pretty pb-4"
-          >
-            Três frentes principais, sempre com{' '}
-            <span className="text-white">estratégia primeiro</span>, estética depois.
-          </motion.p>
+
         </div>
 
         {/* Services grid */}

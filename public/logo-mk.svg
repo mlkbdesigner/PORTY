@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&amp;display=swap');
+      .mk {
+        font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+        font-weight: 400;
+        font-size: 1100px;
+        letter-spacing: -45px;
+        fill: none;
+        stroke: #FF2D87;
+        stroke-width: 18;
+        paint-order: stroke;
+      }
+    </style>
+  </defs>
+  <text x="600" y="900" text-anchor="middle" class="mk">MK</text>
+</svg>

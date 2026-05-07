@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import Logo from './Logo'
 
 const marqueeItems = ['UI/UX', '✦', 'BRANDING', '✦', 'LANDING PAGES', '✦', 'DESIGN SYSTEMS', '✦']
 
@@ -38,11 +39,7 @@ export default function Footer() {
                 transition={{ duration: 1 }}
               >
                 <p className="font-label text-white-mute mb-4">MALU KLEIN BRITO</p>
-                <div className="font-display text-7xl md:text-[9rem] leading-[0.85] text-white">
-                  M<span className="italic text-lime">L</span>
-                  <br />
-                  K<span className="italic text-pink">B</span>
-                </div>
+                <Logo className="w-full max-w-[26rem] h-auto" strokeWidth={14} />
                 <p className="mt-6 text-white-dim text-sm max-w-xs">
                   Designer multidisciplinar focada em criar experiências digitais que
                   importam.
