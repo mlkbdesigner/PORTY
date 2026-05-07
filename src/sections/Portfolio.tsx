@@ -21,16 +21,16 @@ function ProjectCover({ p, index }: { p: Project; index: number }) {
         {/* ========= FOLDER TAB ========= */}
         <div className="relative h-14 shrink-0 pointer-events-none">
           <div
-            className="absolute bottom-0 flex items-center justify-center px-6 md:px-8 h-full min-w-[160px] md:min-w-[220px]"
+            className="absolute bottom-0 flex items-center justify-center px-4 md:px-8 h-full min-w-[120px] md:min-w-[220px] max-w-[calc(100%-1rem)]"
             style={{
-              left: p.tabLeft,
+              left: `min(${p.tabLeft}, calc(100% - 130px))`,
               backgroundColor: bgColor,
               borderTopLeftRadius: '14px',
               borderTopRightRadius: '14px',
               clipPath: 'polygon(10% 0, 90% 0, 100% 100%, 0 100%)',
             }}
           >
-            <span className={`font-body font-bold text-[0.78rem] md:text-[0.9rem] tracking-[0.14em] uppercase ${textColor} whitespace-nowrap`}>
+            <span className={`font-body font-bold text-[0.7rem] md:text-[0.9rem] tracking-[0.14em] uppercase ${textColor} whitespace-nowrap`}>
               {p.keyword}
             </span>
           </div>

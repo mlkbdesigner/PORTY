@@ -52,18 +52,20 @@ export default function ProjectDetail() {
       <Nav />
       <main className="pt-24">
         {/* Breadcrumb / nav */}
-        <div className="mx-auto max-w-[1600px] px-6 md:px-20 py-6 md:py-10 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-20 py-6 md:py-10 flex flex-wrap items-center justify-between gap-3">
           <Link
             to="/#portfolio"
-            className="font-label text-white-dim hover:text-lime transition-colors inline-flex items-center gap-2"
+            className="font-label text-[0.7rem] md:text-xs text-white-dim hover:text-lime transition-colors inline-flex items-center gap-2"
           >
-            ← VOLTAR AO PORTFÓLIO
+            ← VOLTAR
+            <span className="hidden sm:inline">AO PORTFÓLIO</span>
           </Link>
           <Link
             to={`/projeto/${next.slug}`}
-            className="font-label text-white-dim hover:text-lime transition-colors inline-flex items-center gap-2"
+            className="font-label text-[0.7rem] md:text-xs text-white-dim hover:text-lime transition-colors inline-flex items-center gap-2"
           >
-            IR AO PRÓXIMO PROJETO →
+            <span className="hidden sm:inline">IR AO</span>
+            PRÓXIMO PROJETO →
           </Link>
         </div>
 
