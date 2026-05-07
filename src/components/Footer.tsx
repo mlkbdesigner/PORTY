@@ -7,14 +7,14 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-white/15 overflow-hidden">
       {/* Marquee row */}
-      <div className="relative py-10 md:py-14 border-b border-white/15 overflow-hidden">
+      <div className="relative py-6 md:py-8 border-b border-white/15 overflow-hidden">
         <div className="flex whitespace-nowrap marquee-inner">
           {[...Array(4)].map((_, loop) => (
-            <div key={loop} className="flex items-center gap-10 md:gap-14 pr-10 md:pr-14">
+            <div key={loop} className="flex items-center gap-6 md:gap-10 pr-6 md:pr-10">
               {marqueeItems.map((item, i) => (
                 <span
                   key={`${loop}-${i}`}
-                  className={`font-display text-[clamp(3rem,8vw,8rem)] leading-none ${
+                  className={`font-display text-[clamp(1.5rem,3.5vw,3rem)] leading-none ${
                     item === '✦' ? 'text-pink' : 'text-white italic'
                   }`}
                 >

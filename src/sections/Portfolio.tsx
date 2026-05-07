@@ -1,140 +1,8 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
+import { projects, accentBgColor, isDarkAccent, type Project } from '../data/projects'
 
 const ease = [0.16, 1, 0.3, 1] as const
-
-type Accent = 'lime' | 'pink' | 'white' | 'neutral'
-
-interface Project {
-  id: number
-  title: string
-  year: string
-  category: string
-  keyword: string
-  tabLeft: string
-  tags: string[]
-  description: string
-  url: string
-  role: string
-  deliverables: string[]
-  accent: Accent
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Fenty Beauty',
-    year: '2025',
-    category: 'Landing Page',
-    keyword: 'LANDING PAGE',
-    tabLeft: '3%',
-    tags: ['E-commerce', 'Beauty', 'Editorial'],
-    description:
-      'Landing page conceitual para a Fenty Beauty com foco em storytelling de produto e estética editorial de luxo. Explorei transições de imagem, tipografia serif imponente e paleta inspirada nos tons da própria marca.',
-    url: 'https://mlkb.myportfolio.com/fenty-beauty-landing-page',
-    role: 'Design & Art Direction',
-    deliverables: ['UI Design', 'Wireframes', 'Prototype'],
-    accent: 'pink',
-  },
-  {
-    id: 2,
-    title: 'Conoti',
-    year: '2026',
-    category: 'Landing Page',
-    keyword: 'UX / WEB',
-    tabLeft: '17%',
-    tags: ['SaaS', 'TikTok Ads', 'Growth'],
-    description:
-      'Hub de soluções TikTok Ads, Shop e Business. LP completa com Spline 3D, badges de liquid glass, microinterações e um multi-step form inteligente que muda de fluxo conforme o budget do lead.',
-    url: 'https://mlkb.myportfolio.com/conoti-landing-page',
-    role: 'UI/UX & Web Design',
-    deliverables: ['UI Design', 'Motion', 'Dev Handoff'],
-    accent: 'lime',
-  },
-  {
-    id: 3,
-    title: 'Glazedonut',
-    year: '2024',
-    category: 'UI/UX',
-    keyword: 'UI / UX',
-    tabLeft: '31%',
-    tags: ['Web Design', 'F&B', 'Redesign'],
-    description:
-      'Redesign completo de website para uma marca de donuts artesanais. Cardápio interativo, checkout fluido e uma estética doce que reflete o produto sem ser clichê.',
-    url: 'https://mlkb.myportfolio.com/glazedonut-web-design-uxui',
-    role: 'UI/UX Design',
-    deliverables: ['Research', 'Redesign', 'Prototype'],
-    accent: 'white',
-  },
-  {
-    id: 4,
-    title: 'BitStory',
-    year: '2024',
-    category: 'UI/UX',
-    keyword: 'MOBILE UX',
-    tabLeft: '45%',
-    tags: ['Mobile App', 'EdTech', 'Kids'],
-    description:
-      'Aplicativo de leitura interativa infantil. Design focado em acessibilidade e gamificação, com ícones grandes, feedback visual imediato e tipografia amigável pra leitores em formação.',
-    url: 'https://mlkb.myportfolio.com/bitstory-uiux',
-    role: 'UI/UX Design',
-    deliverables: ['User Research', 'UI Design', 'Prototype'],
-    accent: 'neutral',
-  },
-  {
-    id: 5,
-    title: 'CatMatch',
-    year: '2023',
-    category: 'UI/UX',
-    keyword: 'MOBILE / UX',
-    tabLeft: '58%',
-    tags: ['Mobile App', 'Pets', 'Social'],
-    description:
-      'Plataforma de adoção de gatos com sistema de match, perfil de temperamento e onboarding lúdico. Um projeto que une design funcional com propósito social.',
-    url: 'https://mlkb.myportfolio.com/catmatch-uiux',
-    role: 'Product Design',
-    deliverables: ['UX Research', 'UI Design', 'Prototype'],
-    accent: 'pink',
-  },
-  {
-    id: 6,
-    title: 'Peças Gráficas',
-    year: '2022 — 2026',
-    category: 'Branding',
-    keyword: 'SOCIAL MEDIA',
-    tabLeft: '71%',
-    tags: ['Social Media', 'Design Gráfico', 'Multi-cliente'],
-    description:
-      'Coletânea de peças gráficas e conteúdos de social media desenvolvidos para marcas variadas. Um compilado do que rolou de visual nos últimos anos — posts, stories, carrosséis e campanhas.',
-    url: 'https://mlkb.myportfolio.com/social-media',
-    role: 'Graphic Design',
-    deliverables: ['Posts', 'Campanhas', 'Identidade'],
-    accent: 'white',
-  },
-  {
-    id: 7,
-    title: 'Smooti',
-    year: '2023',
-    category: 'Branding',
-    keyword: 'ID VISUAL',
-    tabLeft: '83%',
-    tags: ['Identidade Visual', 'Logo', 'F&B'],
-    description:
-      'Identidade visual completa para marca de smoothies artesanais. Paleta vibrante, sistema modular e aplicações do Instagram ao ponto físico — branding pra marca ser lembrada.',
-    url: 'https://mlkb.myportfolio.com/smooti-1',
-    role: 'Brand Identity',
-    deliverables: ['Logo', 'Manual', 'Aplicações'],
-    accent: 'lime',
-  },
-]
-
-const accentBgColor: Record<Accent, string> = {
-  lime: '#9BE800',
-  pink: '#FF3399',
-  white: '#F5F1EB',
-  neutral: '#1A1A1A',
-}
-
-const isDarkAccent = (a: Accent) => a === 'neutral' || a === 'pink'
 
 function ProjectCover({ p, index }: { p: Project; index: number }) {
   const bgColor = accentBgColor[p.accent]
@@ -186,7 +54,7 @@ function ProjectCover({ p, index }: { p: Project; index: number }) {
           <div className={`relative z-10 flex items-center justify-between px-6 md:px-16 py-5 md:py-6 border-b ${borderColor}`}>
             <div className={`font-label flex items-center gap-3 md:gap-4 ${textColor}`}>
               <span className="w-8 h-px bg-current" />
-              <span>PROJETO · 0{p.id} / 07</span>
+              <span>PROJETO · 0{p.id} / 0{projects.length}</span>
               <span className={`${subColor} hidden md:inline`}>/</span>
               <span className={`${subColor} hidden md:inline`}>{p.year}</span>
             </div>
@@ -197,12 +65,20 @@ function ProjectCover({ p, index }: { p: Project; index: number }) {
           <div className="relative z-10 flex-1 flex flex-col justify-between px-6 md:px-16 py-8 md:py-12 h-[calc(100%-68px)]">
             {/* Giant title */}
             <div className="flex-1 flex items-center">
-              <h3
-                className={`font-display ${textColor} leading-[0.85] tracking-tight`}
-                style={{ fontSize: 'clamp(3.5rem, 13vw, 15rem)' }}
+              <Link
+                to={`/projeto/${p.slug}`}
+                className="group/title inline-block hover:opacity-80 transition-opacity duration-300"
+                aria-label={`Ver projeto ${p.title}`}
               >
-                <span className="italic">{p.title}</span>
-              </h3>
+                <h3
+                  className={`font-display ${textColor} leading-[0.85] tracking-tight`}
+                  style={{ fontSize: 'clamp(3.5rem, 13vw, 15rem)' }}
+                >
+                  <span className="italic underline decoration-transparent group-hover/title:decoration-current decoration-[0.04em] underline-offset-[0.08em] transition-colors duration-300">
+                    {p.title}
+                  </span>
+                </h3>
+              </Link>
             </div>
 
             {/* Bottom meta row */}
@@ -240,15 +116,13 @@ function ProjectCover({ p, index }: { p: Project; index: number }) {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={`/projeto/${p.slug}`}
                   className={`group inline-flex items-center gap-3 px-5 py-3 border-2 ${borderColor} ${textColor} hover:bg-ink hover:text-white hover:border-ink transition-all duration-500`}
                 >
                   <span className="font-label">VER PROJETO</span>
                   <span className="group-hover:rotate-[-45deg] transition-transform duration-500">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -36,45 +36,43 @@ export default function Contato() {
           </div>
         </div>
 
-        {/* Big headline — left aligned, brutalist */}
-        <div className="mb-16 md:mb-20 text-left">
-          <h1
-            className="font-humane uppercase text-pink leading-[0.82]"
-            style={{
-              fontSize: 'clamp(4rem, 12vw, 14rem)',
-              letterSpacing: '0.025em',
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 1.1, ease, delay: 0.15 }}
-              className="block"
-            >
-              Vamos criar
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.05 }}
-              transition={{ duration: 1.1, ease, delay: 0.35 }}
-              className="block text-white -mt-[0.18em]"
-            >
-              algo juntos?
-            </motion.div>
-          </h1>
-        </div>
-
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16">
-          {/* Left — Links */}
+        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-stretch">
+          {/* Left — Headline + Links */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease }}
-            className="md:col-span-5"
+            className="md:col-span-5 flex flex-col"
           >
+            {/* Headline (now inside left col) */}
+            <h1
+              className="font-humane uppercase text-pink leading-[0.82] mb-6 md:mb-8"
+              style={{
+                fontSize: 'clamp(4rem, 9vw, 10rem)',
+                letterSpacing: '0.025em',
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 1, ease, delay: 0.15 }}
+                className="block"
+              >
+                Vamos criar
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.05 }}
+                transition={{ duration: 1, ease, delay: 0.35 }}
+                className="block text-white -mt-[0.18em]"
+              >
+                algo juntos?
+              </motion.div>
+            </h1>
+
             <p className="font-label text-white-mute mb-6">CANAIS DIRETOS</p>
             <div className="border-t border-white/15">
               {contactLinks.map((link, i) => (
@@ -101,8 +99,8 @@ export default function Contato() {
               ))}
             </div>
 
-            {/* Location + time */}
-            <div className="mt-10 p-6 border border-white/15 bg-neutral/40">
+            {/* Location + time — pushed to bottom to align with form's submit row */}
+            <div className="mt-auto p-6 border border-white/15 bg-neutral/40">
               <p className="font-label text-white-mute mb-3">LOCALIZAÇÃO</p>
               <p className="font-display text-2xl text-white mb-1">
                 Recife <span className="italic text-pink">· Brasil</span>
@@ -117,12 +115,12 @@ export default function Contato() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease, delay: 0.15 }}
-            className="md:col-span-7"
+            className="md:col-span-7 flex flex-col"
           >
             <p className="font-label text-white-mute mb-6">OU ME CONTE SOBRE SEU PROJETO ↓</p>
 
             <form
-              className="border border-white/15 bg-neutral/30 p-6 md:p-10 space-y-8"
+              className="flex-1 flex flex-col border border-white/15 bg-neutral/30 p-6 md:p-10 space-y-8"
               onSubmit={(e) => {
                 e.preventDefault()
                 const form = e.currentTarget
@@ -232,7 +230,7 @@ export default function Contato() {
               </div>
 
               {/* Submit */}
-              <div className="pt-4 flex items-center justify-between">
+              <div className="pt-4 mt-auto flex items-center justify-between">
                 <p className="font-label text-white-mute hidden md:block">
                   RESPOSTA EM ATÉ 24H
                 </p>

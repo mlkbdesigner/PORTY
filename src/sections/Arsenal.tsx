@@ -3,14 +3,12 @@ import { motion } from 'motion/react'
 const ease = [0.16, 1, 0.3, 1] as const
 
 const tools = [
-  { name: 'Figma', cat: 'UI/UX', bg: 'bg-ink', text: 'text-lime', pos: 'top-[6%] left-[8%]', rot: -6, hoverRot: -10, hoverX: -8, hoverY: -8 },
-  { name: 'Photoshop', cat: 'Raster', bg: 'bg-pink', text: 'text-white', pos: 'top-[14%] right-[6%]', rot: 3, hoverRot: 8, hoverX: 10, hoverY: -6 },
-  { name: 'Illustrator', cat: 'Vector', bg: 'bg-white', text: 'text-ink', pos: 'top-[34%] left-[2%]', rot: 2, hoverRot: -4, hoverX: -10, hoverY: 4 },
-  { name: 'After Effects', cat: 'Motion', bg: 'bg-ink', text: 'text-white', pos: 'top-[40%] right-[2%]', rot: -4, hoverRot: 2, hoverX: 12, hoverY: -4 },
-  { name: 'Framer', cat: 'Protótipo', bg: 'bg-pink', text: 'text-white', pos: 'bottom-[26%] left-[12%]', rot: 6, hoverRot: 12, hoverX: -8, hoverY: 8 },
-  { name: 'Webflow', cat: 'No-code', bg: 'bg-ink', text: 'text-lime', pos: 'bottom-[18%] right-[14%]', rot: -3, hoverRot: 4, hoverX: 8, hoverY: 8 },
-  { name: 'Notion', cat: 'Docs', bg: 'bg-white', text: 'text-ink', pos: 'bottom-[6%] left-[36%]', rot: -5, hoverRot: 0, hoverX: 0, hoverY: -10 },
-  { name: 'Spline', cat: '3D', bg: 'bg-ink', text: 'text-pink', pos: 'bottom-[8%] right-[28%]', rot: 4, hoverRot: -6, hoverX: 6, hoverY: -8 },
+  { name: 'Photoshop', cat: 'Raster', bg: 'bg-pink', text: 'text-white', pos: 'top-[8%] right-[6%]', rot: 3, hoverRot: 8, hoverX: 10, hoverY: -6 },
+  { name: 'Figma', cat: 'UI/UX', bg: 'bg-ink', text: 'text-lime', pos: 'top-[10%] left-[8%]', rot: -6, hoverRot: -10, hoverX: -8, hoverY: -8 },
+  { name: 'Magnific', cat: 'AI', bg: 'bg-white', text: 'text-ink', pos: 'top-[44%] left-[2%]', rot: -3, hoverRot: -8, hoverX: -10, hoverY: 4 },
+  { name: 'CapCut', cat: 'Edit', bg: 'bg-ink', text: 'text-pink', pos: 'top-[42%] right-[2%]', rot: 4, hoverRot: 8, hoverX: 12, hoverY: -4 },
+  { name: 'After Effects', cat: 'Motion', bg: 'bg-pink', text: 'text-white', pos: 'bottom-[10%] right-[16%]', rot: -4, hoverRot: 4, hoverX: 8, hoverY: 8 },
+  { name: 'Illustrator', cat: 'Vector', bg: 'bg-white', text: 'text-ink', pos: 'bottom-[12%] left-[14%]', rot: 2, hoverRot: -4, hoverX: -8, hoverY: 8 },
 ]
 
 export default function Arsenal() {
@@ -64,12 +62,12 @@ export default function Arsenal() {
                 y: tool.hoverY,
                 transition: { type: 'spring', stiffness: 300, damping: 14 },
               }}
-              className={`absolute ${tool.pos} ${tool.bg} ${tool.text} px-4 py-2.5 md:px-5 md:py-3 border-2 border-ink shadow-[5px_5px_0_rgba(10,10,10,0.9)] hover:shadow-[8px_8px_0_rgba(10,10,10,0.9)] cursor-pointer flex items-center gap-2 z-20 transition-shadow duration-300`}
+              className={`absolute ${tool.pos} ${tool.bg} ${tool.text} px-5 py-3 md:px-7 md:py-4 border-2 border-ink shadow-[6px_6px_0_rgba(10,10,10,0.9)] hover:shadow-[10px_10px_0_rgba(10,10,10,0.9)] cursor-pointer flex items-center gap-3 z-20 transition-shadow duration-300`}
             >
-              <span className="font-body font-bold text-base md:text-xl whitespace-nowrap">
+              <span className="font-body font-bold text-lg md:text-2xl whitespace-nowrap">
                 {tool.name}
               </span>
-              <span className="font-label opacity-70">{tool.cat}</span>
+              <span className="font-label opacity-70 text-xs md:text-sm">{tool.cat}</span>
             </motion.div>
           ))}
         </div>
