@@ -49,7 +49,7 @@ export default function Contato() {
             <h1
               className="font-humane uppercase text-pink leading-[0.82] mb-6 md:mb-8 text-center md:text-left"
               style={{
-                fontSize: 'clamp(3.5rem, 9vw, 10rem)',
+                fontSize: 'clamp(5rem, 14vw, 10rem)',
                 letterSpacing: '0.025em',
               }}
             >

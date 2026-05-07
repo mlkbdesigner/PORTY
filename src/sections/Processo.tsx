@@ -1,4 +1,5 @@
-import { motion } from 'motion/react'
+import { motion, MotionConfig } from 'motion/react'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -46,7 +47,10 @@ const steps = [
 ]
 
 export default function Processo() {
+  const isMobile = useIsMobile()
+
   return (
+    <MotionConfig reducedMotion={isMobile ? 'always' : 'never'}>
     <section id="processo" className="relative py-28 md:py-40 border-t border-white/15 overflow-x-hidden">
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
 
@@ -137,14 +141,11 @@ export default function Processo() {
                   className="md:hidden absolute left-3 top-0 bottom-0 w-[2px] bg-lime/30"
                 />
 
-                {/* Mobile-only timeline dot per card */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease }}
-                  className="md:hidden absolute left-[5px] top-16 w-3 h-3 rounded-full bg-lime border-2 border-ink shadow-[0_0_12px_rgba(155,232,0,0.8)] z-10"
+                {/* Mobile-only timeline dot per card — centered on the line */}
+                <span
                   aria-hidden="true"
+                  className="md:hidden absolute top-16 w-3 h-3 rounded-full bg-lime border-2 border-ink shadow-[0_0_12px_rgba(155,232,0,0.8)] z-10"
+                  style={{ left: 'calc(0.75rem + 1px - 6px)' }}
                 />
 
                 {/* Desktop-only timeline dot marker — sits on horizontal lime line */}
@@ -227,5 +228,6 @@ export default function Processo() {
       </div>
 
     </section>
+    </MotionConfig>
   )
 }
