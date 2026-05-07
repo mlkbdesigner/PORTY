@@ -147,14 +147,9 @@ export default function Hero() {
             Instagram ↗
           </a>
 
-          {/* Center — capsule summary */}
-          <div className="text-center text-white/70">
-            <span className="text-white">+30 projetos</span>
-            <span className="mx-2 text-white/30">·</span>
-            <span>UI/UX · Branding · LPs</span>
-            <span className="mx-2 text-white/30">·</span>
-            <span className="text-white">2022 — 2026</span>
-          </div>
+          {/* Center — empty spacer */}
+          <div />
+
 
           {/* Right */}
           <a

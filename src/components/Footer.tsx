@@ -38,12 +38,7 @@ export default function Footer() {
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
               >
-                <p className="font-label text-white-mute mb-4">MALU KLEIN BRITO</p>
                 <Logo className="w-full max-w-[26rem] h-auto" strokeWidth={14} />
-                <p className="mt-6 text-white-dim text-sm max-w-xs">
-                  Designer multidisciplinar focada em criar experiências digitais que
-                  importam.
-                </p>
               </motion.div>
             </div>
 

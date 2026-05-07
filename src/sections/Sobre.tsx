@@ -57,7 +57,6 @@ export default function Sobre() {
             <span className="text-lime">[ 02 ]</span>
             <span>SOBRE</span>
           </div>
-          <span className="hidden md:inline">MLKB · DESIGNER</span>
         </div>
 
         {/* Main text block */}

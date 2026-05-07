@@ -42,12 +42,8 @@ export default function Nav() {
           style={{ maxWidth: 'clamp(22rem, 88vw, 100rem)' }}
         >
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-3 group">
+        <a href="#top" className="flex items-center group">
           <Logo className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
-          <div className="hidden sm:block leading-none">
-            <div className="font-label text-white">MALU KLEIN</div>
-            <div className="font-label text-white-mute mt-1 text-[0.6rem]">DESIGNER · MLKB</div>
-          </div>
         </a>
 
         {/* Nav links */}
