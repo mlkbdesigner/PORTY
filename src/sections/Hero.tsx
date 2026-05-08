@@ -87,7 +87,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, ease, delay: 0.3 }}
-        className="relative z-[5] w-full px-6 pt-28 md:pt-36 flex justify-center"
+        className="relative z-[5] w-full px-6 pt-28 md:pt-36 hidden md:flex justify-center"
       >
         <div
           className="w-full flex justify-between items-start font-label text-white/60 gap-4"
