@@ -83,9 +83,9 @@ export const projects: Project[] = [
     tabLeft: '52%',
     tags: ['Social Media', 'Design Gráfico', 'Multi-cliente'],
     description:
-      'Coletânea de peças gráficas e conteúdos de social media desenvolvidos para marcas variadas. Um compilado do que rolou de visual nos últimos anos — posts, stories, carrosséis e campanhas.',
+      'Direção criativa de social media pra múltiplos clientes desde 2022 — campanhas, lançamentos e conteúdo recorrente. Cada marca com seu sistema visual replicável e voz própria.',
     longDescription:
-      'Compilado de peças gráficas e conteúdo de social media produzidos entre 2022 e 2026 pra clientes variados. Inclui campanhas pontuais, sistemas de identidade aplicada, carrosséis editoriais, stories animados e materiais de divulgação. É um recorte de prática contínua — onde testo composições, paletas e tons de voz, e refino o que vai pros projetos maiores.',
+      'Direção criativa contínua pra múltiplos clientes desde 2022 — campanhas de lançamento, conteúdo recorrente, sistemas visuais aplicados e peças pontuais de tração. Cada cliente exige uma voz própria e um sistema replicável: o trabalho é fazer cada marca ficar reconhecível dentro do ruído do feed, sem trair a estratégia. Volume, consistência e adaptação entre tons radicalmente diferentes — do editorial ao performático, do sofisticado ao espontâneo.',
     cover: 'https://cdn.myportfolio.com/47fe971d-a65e-45a7-afba-3ca6fcea238c/60570813-114b-4d2f-bc3c-4c83afb58531_carw_202x158x1920.jpg?h=c92dc8f9cf90d55c7705085414f9a6bc',
     oldUrl: 'https://mlkb.myportfolio.com/social-media',
     role: 'Graphic Design',
