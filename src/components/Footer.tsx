@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="mt-16 pt-8 border-t border-white/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-label text-white-mute">
             <span>© 2026 · MALU KLEIN · TODOS OS DIREITOS RESERVADOS</span>
-            <span>DESIGNED &amp; BUILT IN CURITIBA · BR</span>
+            <span>DESIGNED &amp; BUILT IN RECIFE · PE</span>
             <a href="#top" className="link-underline hover:text-lime transition flex items-center gap-2">
               VOLTAR AO TOPO <span>↑</span>
             </a>
