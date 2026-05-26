@@ -227,21 +227,55 @@ export default function ProjectDetail() {
             </section>
 
             <section className="relative py-20 md:py-28 border-t border-white/10">
-              <div className="mx-auto max-w-[1600px] px-6 md:px-20 text-center">
-                <p className="font-label text-white-mute mb-6">GALERIA COMPLETA</p>
-                <h3 className="font-display text-3xl md:text-5xl text-white mb-8 leading-tight max-w-3xl mx-auto">
-                  Imagens detalhadas, mockups e processo deste projeto estão no
-                  <span className="italic text-lime"> portfólio antigo</span>.
-                </h3>
-                <a
-                  href={project.oldUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 px-6 py-4 border-2 border-lime text-lime hover:bg-lime hover:text-ink transition-all duration-300"
-                >
-                  <span className="font-label">VER GALERIA COMPLETA</span>
-                  <span className="group-hover:translate-x-1 transition-transform">↗</span>
-                </a>
+              <div className="mx-auto max-w-[1600px] px-6 md:px-20">
+                <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+                  <div className="md:col-span-7">
+                    <p className="font-label text-lime mb-6">GALERIA · EM CURADORIA</p>
+                    <h3
+                      className="font-display text-white leading-[0.85] mb-8"
+                      style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}
+                    >
+                      Uma galeria nova,
+                      <span className="italic text-lime"> à altura</span> do trabalho.
+                    </h3>
+                    <p className="text-white-dim text-lg md:text-xl leading-relaxed max-w-2xl">
+                      Estou selecionando os melhores criativos dos últimos anos pra montar um case completo aqui. Enquanto isso, o feed do Instagram tem a versão sem cortes.
+                    </p>
+                    <div className="mt-10 flex flex-wrap items-center gap-4">
+                      <a
+                        href="https://instagram.com/designedbyklein"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-lime"
+                      >
+                        Ver no Instagram ↗
+                      </a>
+                      <Link to="/#portfolio" className="btn-ghost">
+                        Outros projetos
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="md:col-span-5">
+                    <div className="aspect-[4/5] border border-white/15 bg-neutral/30 flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 dot-grid opacity-50" />
+                      <div className="relative text-center px-6">
+                        <p
+                          className="font-humane text-lime leading-[0.85]"
+                          style={{ fontSize: 'clamp(4rem, 10vw, 8rem)' }}
+                        >
+                          EM
+                        </p>
+                        <p
+                          className="font-humane text-pink leading-[0.85] italic -mt-4"
+                          style={{ fontSize: 'clamp(4rem, 10vw, 8rem)' }}
+                        >
+                          breve
+                        </p>
+                        <p className="mt-6 font-label text-white-mute">CURADORIA · 2026</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </>
