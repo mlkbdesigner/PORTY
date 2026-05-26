@@ -8,7 +8,6 @@ const contactLinks = [
   { label: 'Behance', value: '@marialusak', href: 'https://www.behance.net/marialusak' },
   { label: 'LinkedIn', value: '/in/mlkb', href: 'https://www.linkedin.com/in/mlkb/' },
   { label: 'Instagram', value: '@designedbyklein', href: 'https://instagram.com/designedbyklein' },
-  { label: 'Portfolio', value: 'mlkb.myportfolio.com', href: 'https://mlkb.myportfolio.com/home' },
 ]
 
 const services = ['Web Design', 'Branding', 'Criativos & Ads', 'Outro']

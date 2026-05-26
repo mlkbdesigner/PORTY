@@ -59,7 +59,6 @@ export default function Footer() {
                   <li><a href="https://www.behance.net/marialusak" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-lime transition">Behance ↗</a></li>
                   <li><a href="https://www.linkedin.com/in/mlkb/" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-lime transition">LinkedIn ↗</a></li>
                   <li><a href="https://instagram.com/designedbyklein" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-lime transition">Instagram ↗</a></li>
-                  <li><a href="https://mlkb.myportfolio.com/home" target="_blank" rel="noopener noreferrer" className="link-underline hover:text-lime transition">Portfolio ↗</a></li>
                 </ul>
               </div>
               <div className="col-span-2 md:col-span-1">
