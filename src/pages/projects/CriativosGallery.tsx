@@ -43,28 +43,27 @@ function Campaign({ c, idx }: { c: CriativoCampaign; idx: number }) {
       </div>
 
       {(() => {
-        const slides: Array<{ src: string; alt: string; width: string }> = []
+        const slides: Array<{ src: string; alt: string }> = []
         if (c.master) {
           slides.push({
             src: c.master,
             alt: `${c.client} — ${c.title} · master`,
-            width: 'w-[85%] sm:w-[65%] md:w-[55%]',
           })
         }
-        const pieceWidths = ['w-[60%] sm:w-[40%] md:w-[32%]', 'w-[55%] sm:w-[38%] md:w-[28%]', 'w-[65%] sm:w-[45%] md:w-[36%]', 'w-[50%] sm:w-[36%] md:w-[26%]']
         c.pieces.forEach((src, i) => {
           slides.push({
             src,
             alt: `${c.client} — ${c.title} · peça ${i + 1}`,
-            width: pieceWidths[i % pieceWidths.length],
           })
         })
+
+        const slideWidth = 'w-[80%] sm:w-[55%] md:w-[40%] lg:w-[32%]'
 
         return (
           <Carousel options={{ loop: false, dragFree: true, align: 'start' }} className="relative">
             <SliderContainer className="gap-4 md:gap-6">
               {slides.map((s) => (
-                <Slider key={s.src} className={s.width}>
+                <Slider key={s.src} className={slideWidth}>
                   <img
                     src={s.src}
                     alt={s.alt}
