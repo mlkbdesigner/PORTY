@@ -12,7 +12,7 @@ const contactLinks = [
 ]
 
 const services = ['Web Design', 'Branding', 'Criativos & Ads', 'Outro']
-const budgets = ['Até R$3k', 'R$3k — R$10k', 'R$10k — R$20k', '+R$20k']
+const budgets = ['Até R$1k', 'R$1k — R$3k', 'R$3k — R$8k', '+R$8k']
 
 export default function Contato() {
   const [selectedService, setSelectedService] = useState<string | null>(null)
