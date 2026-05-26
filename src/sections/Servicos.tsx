@@ -5,11 +5,11 @@ const ease = [0.16, 1, 0.3, 1] as const
 const services = [
   {
     num: '01',
-    title: 'UI/UX Design',
-    subtitle: 'Interfaces que pensam no usuário',
+    title: 'Web Design',
+    subtitle: 'Sites e LPs que convertem',
     description:
-      'Do wireframe ao protótipo navegável. Desenho experiências digitais pra web e mobile focadas em usabilidade, acessibilidade e identidade de marca.',
-    tags: ['Wireframing', 'Prototipação', 'Design System', 'User Research', 'Mobile First', 'Acessibilidade'],
+      'Do wireframe ao site no ar. UI/UX, landing pages de alta conversão e produtos digitais — sempre com foco em usabilidade, performance e identidade de marca.',
+    tags: ['UI/UX', 'Landing Pages', 'Design System', 'Prototipação', 'Conversão', 'A/B Testing', 'Mobile First', 'Acessibilidade'],
     accent: 'lime',
   },
   {
@@ -23,11 +23,11 @@ const services = [
   },
   {
     num: '03',
-    title: 'Landing Pages',
-    subtitle: 'Design que converte',
+    title: 'Criativos & Ads',
+    subtitle: 'Performance que vende',
     description:
-      'LPs de alta conversão, do copy à última microinteração. Projetadas pra performar em campanhas de tráfego pago e lançamentos.',
-    tags: ['Conversão', 'Copy + Design', 'SEO', 'A/B Testing', 'Performance', 'Mobile First'],
+      'Criativos de ads, e-mail marketing e peças de social media — pensados pra performar em tráfego pago, lançamentos e nutrição. Direção, copy e execução em fluxo contínuo.',
+    tags: ['Ads (Meta · TikTok)', 'E-mail Marketing', 'Social Media', 'Copy', 'Lançamentos', 'Direção Criativa'],
     accent: 'white',
   },
 ]
