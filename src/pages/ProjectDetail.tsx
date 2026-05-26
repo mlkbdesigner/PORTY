@@ -5,7 +5,6 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { getProjectBySlug, projects, accentBgColor, isDarkAccent } from '../data/projects'
 import CatMatchCaseStudy from './projects/CatMatchCaseStudy'
-import CriativosGallery from './projects/CriativosGallery'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -166,8 +165,6 @@ export default function ProjectDetail() {
         {/* Custom case study — CatMatch */}
         {project.slug === 'catmatch' ? (
           <CatMatchCaseStudy coverUrl={project.cover} />
-        ) : project.slug === 'pecas-graficas' ? (
-          <CriativosGallery />
         ) : project.gallery && project.gallery.length > 0 ? (
           <section
             className="relative py-12 md:py-20"
