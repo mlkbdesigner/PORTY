@@ -34,30 +34,32 @@ function Campaign({ c, idx }: { c: CriativoCampaign; idx: number }) {
         )}
       </div>
 
-      {c.master && (
-        <div className="mb-6 md:mb-8">
-          <img
-            src={c.master}
-            alt={`${c.client} — ${c.title} · master`}
-            className="w-full h-auto block border border-white/10"
-            loading="lazy"
-          />
-        </div>
-      )}
-
-      {c.pieces.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-          {c.pieces.map((src, i) => (
+      <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
+        {c.master && (
+          <div className="md:col-span-7 md:sticky md:top-24 self-start">
             <img
-              key={src}
-              src={src}
-              alt={`${c.client} — ${c.title} · peça ${i + 1}`}
+              src={c.master}
+              alt={`${c.client} — ${c.title} · master`}
               className="w-full h-auto block border border-white/10"
               loading="lazy"
             />
-          ))}
-        </div>
-      )}
+          </div>
+        )}
+
+        {c.pieces.length > 0 && (
+          <div className={`flex flex-col gap-6 md:gap-8 ${c.master ? 'md:col-span-5' : 'md:col-span-12'}`}>
+            {c.pieces.map((src, i) => (
+              <img
+                key={src}
+                src={src}
+                alt={`${c.client} — ${c.title} · peça ${i + 1}`}
+                className="w-full h-auto block border border-white/10"
+                loading="lazy"
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </motion.article>
   )
 }
