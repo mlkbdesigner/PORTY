@@ -11,8 +11,8 @@ const contactLinks = [
   { label: 'Portfolio', value: 'mlkb.myportfolio.com', href: 'https://mlkb.myportfolio.com/home' },
 ]
 
-const services = ['UI/UX Design', 'Branding', 'Landing Page', 'Outro']
-const budgets = ['Até R$5k', 'R$5k — R$15k', 'R$15k — R$30k', '+R$30k']
+const services = ['Web Design', 'Branding', 'Criativos & Ads', 'Outro']
+const budgets = ['Até R$3k', 'R$3k — R$10k', 'R$10k — R$20k', '+R$20k']
 
 export default function Contato() {
   const [selectedService, setSelectedService] = useState<string | null>(null)
