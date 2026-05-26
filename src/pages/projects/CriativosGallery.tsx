@@ -20,26 +20,34 @@ function Campaign({ c, idx }: { c: CriativoCampaign; idx: number }) {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.9, ease }}
     >
-      <div className="grid md:grid-cols-12 gap-6 md:gap-10 mb-10 md:mb-14 items-end">
-        <div className="md:col-span-1">
-          <span className="font-label text-white-mute">/ 0{idx + 1}</span>
+      <div className="mb-10 md:mb-14">
+        <div className="flex items-center gap-3 mb-5 font-label text-white-mute">
+          <span className="text-lime">/ 0{idx + 1}</span>
+          <span>CLIENTE</span>
+          <span className="w-6 h-px bg-white/20" />
+          <span>{c.year}</span>
         </div>
-        <div className="md:col-span-7">
-          <p className="font-label text-lime mb-3">
-            {c.client.toUpperCase()} · {c.year}
-          </p>
-          <h3
-            className="font-display text-white leading-[0.95] italic"
-            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}
-          >
-            {c.title}
-          </h3>
-        </div>
-        {c.description && (
+
+        <h3
+          className="font-display text-white leading-[0.9] italic mb-8"
+          style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
+        >
+          {c.client}
+        </h3>
+
+        <div className="grid md:grid-cols-12 gap-5 md:gap-10 items-start">
           <div className="md:col-span-4">
-            <p className="text-white-dim text-pretty leading-relaxed">{c.description}</p>
+            <span className="inline-flex items-center gap-2 px-4 py-2 border border-lime text-lime font-label">
+              <span className="w-1.5 h-1.5 bg-lime rounded-full" />
+              {c.title}
+            </span>
           </div>
-        )}
+          {c.description && (
+            <p className="md:col-span-8 text-white-dim text-pretty leading-relaxed text-base md:text-lg max-w-3xl">
+              {c.description}
+            </p>
+          )}
+        </div>
       </div>
 
       {(() => {

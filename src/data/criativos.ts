@@ -14,7 +14,7 @@ export const adsCampaigns: CriativoCampaign[] = [
   {
     id: 'ada-dia-das-maes',
     client: 'ADA Nutracêuticos',
-    title: 'Dia das Mães · Combos',
+    title: 'Campanha do Dia das Mães',
     year: '2025',
     description:
       'Direção criativa pra campanha de Dia das Mães — 4 combos especiais com brinde, cada um pensado pra um perfil de consumidora. Layout mãe + desdobramentos individuais.',
