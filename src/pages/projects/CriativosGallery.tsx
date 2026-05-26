@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { adsCampaigns, feedCampaigns, type CriativoFormat, type CriativoCampaign } from '../../data/criativos'
+import {
+  Carousel,
+  Slider,
+  SliderContainer,
+  SliderSnapDisplay,
+  SliderPrevButton,
+  SliderNextButton,
+} from '../../components/ui/carousel'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -34,32 +42,53 @@ function Campaign({ c, idx }: { c: CriativoCampaign; idx: number }) {
         )}
       </div>
 
-      <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
-        {c.master && (
-          <div className="md:col-span-7 md:sticky md:top-24 self-start">
-            <img
-              src={c.master}
-              alt={`${c.client} — ${c.title} · master`}
-              className="w-full h-auto block border border-white/10"
-              loading="lazy"
-            />
-          </div>
-        )}
+      {(() => {
+        const slides: Array<{ src: string; alt: string; width: string }> = []
+        if (c.master) {
+          slides.push({
+            src: c.master,
+            alt: `${c.client} — ${c.title} · master`,
+            width: 'w-[85%] sm:w-[65%] md:w-[55%]',
+          })
+        }
+        const pieceWidths = ['w-[60%] sm:w-[40%] md:w-[32%]', 'w-[55%] sm:w-[38%] md:w-[28%]', 'w-[65%] sm:w-[45%] md:w-[36%]', 'w-[50%] sm:w-[36%] md:w-[26%]']
+        c.pieces.forEach((src, i) => {
+          slides.push({
+            src,
+            alt: `${c.client} — ${c.title} · peça ${i + 1}`,
+            width: pieceWidths[i % pieceWidths.length],
+          })
+        })
 
-        {c.pieces.length > 0 && (
-          <div className={`flex flex-col gap-6 md:gap-8 ${c.master ? 'md:col-span-5' : 'md:col-span-12'}`}>
-            {c.pieces.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt={`${c.client} — ${c.title} · peça ${i + 1}`}
-                className="w-full h-auto block border border-white/10"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        )}
-      </div>
+        return (
+          <Carousel options={{ loop: false, dragFree: true, align: 'start' }} className="relative">
+            <SliderContainer className="gap-4 md:gap-6">
+              {slides.map((s) => (
+                <Slider key={s.src} className={s.width}>
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    className="w-full h-auto block border border-white/10 select-none"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </Slider>
+              ))}
+            </SliderContainer>
+
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <SliderPrevButton className="font-label w-12 h-12 border border-white/20 text-white-dim hover:border-lime hover:text-lime transition-all disabled:opacity-30 disabled:cursor-not-allowed" />
+                <SliderNextButton className="font-label w-12 h-12 border border-white/20 text-white-dim hover:border-lime hover:text-lime transition-all disabled:opacity-30 disabled:cursor-not-allowed" />
+                <span className="font-label text-white-mute ml-3 hidden sm:inline">
+                  ARRASTE OU USE AS SETAS
+                </span>
+              </div>
+              <SliderSnapDisplay className="font-label text-sm border border-white/20 text-white px-4 py-3 min-w-[5rem] text-center" />
+            </div>
+          </Carousel>
+        )
+      })()}
     </motion.article>
   )
 }
