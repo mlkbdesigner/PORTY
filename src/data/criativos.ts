@@ -1,5 +1,7 @@
 export type CriativoCategory = 'anuncios' | 'feed' | 'email-marketing'
 
+export type SlideFormat = 'square' | 'portrait'
+
 export interface CriativoCampaign {
   id: string
   client: string
@@ -8,6 +10,8 @@ export interface CriativoCampaign {
   description?: string
   master?: string
   pieces: string[]
+  /** Aspect format das peças — controla a largura dos slides no carrossel. Default: 'square'. */
+  format?: SlideFormat
 }
 
 export interface CategoryMeta {
@@ -46,6 +50,7 @@ export const categoryMeta: Record<CriativoCategory, CategoryMeta> = {
     description:
       'Templates e disparos pra nutrição de base, lançamentos e relacionamento — design pensado pra inbox.',
     accent: 'white',
+    previewImage: '/criativos/email-marketing/ada-nutraceuticos-regua-crm/01-boas-vindas-desconto.png',
   },
 }
 
@@ -68,5 +73,23 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
     },
   ],
   feed: [],
-  'email-marketing': [],
+  'email-marketing': [
+    {
+      id: 'ada-regua-crm',
+      client: 'ADA Nutracêuticos',
+      title: 'Régua de E-mail Marketing',
+      year: '2025',
+      format: 'portrait',
+      description:
+        'Régua de CRM completa pra base — do boas-vindas com cashback até reativação por aniversário, indicação de amigo e atualização de plataforma. Templates pensados pra inbox e jornada do consumidor.',
+      pieces: [
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/01-boas-vindas-desconto.png',
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/02-boas-vindas-health-points.png',
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/03-agradecimento-pedido.png',
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/04-aniversario.png',
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/05-indicacao-amigo.png',
+        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/06-adaclinconnect.png',
+      ],
+    },
+  ],
 }

@@ -20,7 +20,10 @@ function Campaign({ c, idx }: { c: CriativoCampaign; idx: number }) {
     slides.push({ src, alt: `${c.client} — ${c.title} · peça ${i + 1}` })
   })
 
-  const slideWidth = 'w-[80%] sm:w-[55%] md:w-[40%] lg:w-[32%]'
+  const slideWidth =
+    c.format === 'portrait'
+      ? 'w-[60%] sm:w-[38%] md:w-[26%] lg:w-[20%]'
+      : 'w-[80%] sm:w-[55%] md:w-[40%] lg:w-[32%]'
 
   return (
     <motion.article
