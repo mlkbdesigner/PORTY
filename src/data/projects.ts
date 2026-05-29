@@ -24,12 +24,31 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: 'pecas-graficas',
+    title: 'Criativos',
+    year: '2022 — 2026',
+    category: 'Branding',
+    keyword: 'SOCIAL MEDIA',
+    tabLeft: '3%',
+    tags: ['Social Media', 'Design Gráfico', 'Multi-cliente'],
+    description:
+      'Direção criativa de social media pra múltiplos clientes desde 2022 — campanhas, lançamentos e conteúdo recorrente. Cada marca com seu sistema visual replicável e voz própria.',
+    longDescription:
+      'Direção criativa contínua pra múltiplos clientes desde 2022 — campanhas de lançamento, conteúdo recorrente, sistemas visuais aplicados e peças pontuais de tração. Cada cliente exige uma voz própria e um sistema replicável: o trabalho é fazer cada marca ficar reconhecível dentro do ruído do feed, sem trair a estratégia. Volume, consistência e adaptação entre tons radicalmente diferentes — do editorial ao performático, do sofisticado ao espontâneo.',
+    cover: 'https://cdn.myportfolio.com/47fe971d-a65e-45a7-afba-3ca6fcea238c/60570813-114b-4d2f-bc3c-4c83afb58531_carw_202x158x1920.jpg?h=c92dc8f9cf90d55c7705085414f9a6bc',
+    oldUrl: 'https://mlkb.myportfolio.com/social-media',
+    role: 'Graphic Design',
+    deliverables: ['Posts', 'Campanhas', 'Identidade'],
+    accent: 'white',
+  },
+  {
+    id: 2,
     slug: 'fenty-beauty',
     title: 'Fenty Beauty',
     year: '2025',
     category: 'Landing Page',
     keyword: 'LANDING PAGE',
-    tabLeft: '3%',
+    tabLeft: '28%',
     tags: ['E-commerce', 'Beauty', 'Editorial'],
     description:
       'Landing page conceitual para a Fenty Beauty com foco em storytelling de produto e estética editorial de luxo. Explorei transições de imagem, tipografia serif imponente e paleta inspirada nos tons da própria marca.',
@@ -55,13 +74,13 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     slug: 'catmatch',
     title: 'CatMatch',
     year: '2023',
     category: 'UI/UX',
     keyword: 'MOBILE / UX',
-    tabLeft: '28%',
+    tabLeft: '52%',
     tags: ['Mobile App', 'Pets', 'Social'],
     description:
       'Plataforma de adoção de gatos com sistema de match, perfil de temperamento e onboarding lúdico. Um projeto que une design funcional com propósito social.',
@@ -72,25 +91,6 @@ export const projects: Project[] = [
     role: 'Product Design',
     deliverables: ['UX Research', 'UI Design', 'Prototype'],
     accent: 'lime',
-  },
-  {
-    id: 3,
-    slug: 'pecas-graficas',
-    title: 'Criativos',
-    year: '2022 — 2026',
-    category: 'Branding',
-    keyword: 'SOCIAL MEDIA',
-    tabLeft: '52%',
-    tags: ['Social Media', 'Design Gráfico', 'Multi-cliente'],
-    description:
-      'Direção criativa de social media pra múltiplos clientes desde 2022 — campanhas, lançamentos e conteúdo recorrente. Cada marca com seu sistema visual replicável e voz própria.',
-    longDescription:
-      'Direção criativa contínua pra múltiplos clientes desde 2022 — campanhas de lançamento, conteúdo recorrente, sistemas visuais aplicados e peças pontuais de tração. Cada cliente exige uma voz própria e um sistema replicável: o trabalho é fazer cada marca ficar reconhecível dentro do ruído do feed, sem trair a estratégia. Volume, consistência e adaptação entre tons radicalmente diferentes — do editorial ao performático, do sofisticado ao espontâneo.',
-    cover: 'https://cdn.myportfolio.com/47fe971d-a65e-45a7-afba-3ca6fcea238c/60570813-114b-4d2f-bc3c-4c83afb58531_carw_202x158x1920.jpg?h=c92dc8f9cf90d55c7705085414f9a6bc',
-    oldUrl: 'https://mlkb.myportfolio.com/social-media',
-    role: 'Graphic Design',
-    deliverables: ['Posts', 'Campanhas', 'Identidade'],
-    accent: 'white',
   },
   {
     id: 4,
