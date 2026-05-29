@@ -2,6 +2,13 @@ export type CriativoCategory = 'anuncios' | 'feed' | 'email-marketing'
 
 export type SlideFormat = 'square' | 'portrait'
 
+export interface CriativoRow {
+  /** Rótulo opcional acima do slider (ex.: "Feed", "Stories"). */
+  label?: string
+  format: SlideFormat
+  pieces: string[]
+}
+
 export interface CriativoCampaign {
   id: string
   client: string
@@ -9,9 +16,7 @@ export interface CriativoCampaign {
   year: string
   description?: string
   master?: string
-  pieces: string[]
-  /** Aspect format das peças — controla a largura dos slides no carrossel. Default: 'square'. */
-  format?: SlideFormat
+  rows: CriativoRow[]
 }
 
 export interface CategoryMeta {
@@ -42,6 +47,7 @@ export const categoryMeta: Record<CriativoCategory, CategoryMeta> = {
     description:
       'Peças contínuas pra social media — posts, carrosséis e identidade visual aplicada no feed das marcas.',
     accent: 'pink',
+    previewImage: '/criativos/feed/forsun/feed-01.png',
   },
   'email-marketing': {
     slug: 'email-marketing',
@@ -64,31 +70,65 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       description:
         'Direção criativa pra campanha de Dia das Mães — 4 combos especiais com brinde, cada um pensado pra um perfil de consumidora. Layout mãe + desdobramentos individuais.',
       master: '/criativos/ads/ada-nutraceuticos-dia-das-maes/master.png',
-      pieces: [
-        '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-01.png',
-        '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-02.png',
-        '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-03.png',
-        '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-04.png',
+      rows: [
+        {
+          format: 'square',
+          pieces: [
+            '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-01.png',
+            '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-02.png',
+            '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-03.png',
+            '/criativos/ads/ada-nutraceuticos-dia-das-maes/combo-04.png',
+          ],
+        },
       ],
     },
   ],
-  feed: [],
+  feed: [
+    {
+      id: 'forsun-feed',
+      client: 'Forsun',
+      title: 'Identidade no Feed',
+      year: '2025',
+      description:
+        'Direção visual contínua pra Forsun no Instagram — posts e stories alinhados, do conceito ao desdobramento. Sistema replicável pra alimentar feed e stories com a mesma voz.',
+      rows: [
+        {
+          label: 'Feed',
+          format: 'square',
+          pieces: Array.from({ length: 10 }, (_, i) =>
+            `/criativos/feed/forsun/feed-${String(i + 1).padStart(2, '0')}.png`,
+          ),
+        },
+        {
+          label: 'Stories',
+          format: 'portrait',
+          pieces: Array.from({ length: 10 }, (_, i) =>
+            `/criativos/feed/forsun/story-${String(i + 1).padStart(2, '0')}.png`,
+          ),
+        },
+      ],
+    },
+  ],
   'email-marketing': [
     {
       id: 'ada-regua-crm',
       client: 'ADA Nutracêuticos',
       title: 'Régua de E-mail Marketing',
       year: '2025',
-      format: 'portrait',
       description:
         'Régua de CRM completa pra base — do boas-vindas com cashback até reativação por aniversário, indicação de amigo e atualização de plataforma. Templates pensados pra inbox e jornada do consumidor.',
-      pieces: [
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/01-boas-vindas-desconto.png',
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/02-boas-vindas-health-points.png',
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/03-agradecimento-pedido.png',
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/04-aniversario.png',
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/05-indicacao-amigo.png',
-        '/criativos/email-marketing/ada-nutraceuticos-regua-crm/06-adaclinconnect.png',
+      rows: [
+        {
+          format: 'portrait',
+          pieces: [
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/01-boas-vindas-desconto.png',
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/02-boas-vindas-health-points.png',
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/03-agradecimento-pedido.png',
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/04-aniversario.png',
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/05-indicacao-amigo.png',
+            '/criativos/email-marketing/ada-nutraceuticos-regua-crm/06-adaclinconnect.png',
+          ],
+        },
       ],
     },
   ],
