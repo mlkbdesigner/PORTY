@@ -95,14 +95,14 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
         {
           label: 'Feed',
           format: 'square',
-          pieces: Array.from({ length: 10 }, (_, i) =>
+          pieces: Array.from({ length: 20 }, (_, i) =>
             `/criativos/feed/forsun/feed-${String(i + 1).padStart(2, '0')}.png`,
           ),
         },
         {
           label: 'Stories',
           format: 'portrait',
-          pieces: Array.from({ length: 10 }, (_, i) =>
+          pieces: Array.from({ length: 22 }, (_, i) =>
             `/criativos/feed/forsun/story-${String(i + 1).padStart(2, '0')}.png`,
           ),
         },
