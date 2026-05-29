@@ -23,7 +23,7 @@ export interface CategoryMeta {
   previewImage?: string
 }
 
-export const categoryOrder: CriativoCategory[] = ['anuncios', 'feed', 'email-marketing']
+export const categoryOrder: CriativoCategory[] = ['feed', 'anuncios', 'email-marketing']
 
 export const categoryMeta: Record<CriativoCategory, CategoryMeta> = {
   anuncios: {
