@@ -63,6 +63,30 @@ export const categoryMeta: Record<CriativoCategory, CategoryMeta> = {
 export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> = {
   anuncios: [
     {
+      id: 'voltys-eletrolitos',
+      client: 'Voltys',
+      title: 'Campanha de Eletrólitos',
+      year: '2025',
+      description:
+        'Direção criativa pra mídia paga da Voltys (eletrólitos) — posicionamento "zero excessos, tudo o que precisa". Sistema com 10 ads pro feed e 10 desdobramentos verticais pra stories, mantendo a paleta clean e a hierarquia tipográfica da marca.',
+      rows: [
+        {
+          label: 'Feed',
+          format: 'square',
+          pieces: Array.from({ length: 10 }, (_, i) =>
+            `/criativos/ads/voltys/feed-${String(i + 1).padStart(2, '0')}.png`,
+          ),
+        },
+        {
+          label: 'Stories',
+          format: 'portrait',
+          pieces: Array.from({ length: 10 }, (_, i) =>
+            `/criativos/ads/voltys/story-${String(i + 1).padStart(2, '0')}.png`,
+          ),
+        },
+      ],
+    },
+    {
       id: 'ada-dia-das-maes',
       client: 'ADA Nutracêuticos',
       title: 'Campanha do Dia das Mães',
