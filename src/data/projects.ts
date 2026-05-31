@@ -109,7 +109,7 @@ export const projects: Project[] = [
     oldUrl: 'https://mlkb.myportfolio.com/smooti-1',
     role: 'Brand Identity',
     deliverables: ['Logo', 'Manual', 'Aplicações'],
-    accent: 'lime',
+    accent: 'white',
     galleryBg: '#FFF8E5',
     gallery: [
       '/projects/smooti/01-case-study.jpg',
