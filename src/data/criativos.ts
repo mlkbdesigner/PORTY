@@ -135,6 +135,24 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
   ],
   'email-marketing': [
     {
+      id: 'qix-winback',
+      client: 'QIX',
+      title: 'Régua de Winback',
+      year: '2025',
+      description:
+        'Fluxo de winback pra reativação de base — 3 disparos escalonados (4, 7 e 90 dias) com cupom progressivo, gatilhos de urgência e CTA de WhatsApp pra reabrir conversa antes do cliente esfriar.',
+      rows: [
+        {
+          format: 'portrait',
+          pieces: [
+            '/criativos/email-marketing/qix/01-04-dias.png',
+            '/criativos/email-marketing/qix/02-07-dias.png',
+            '/criativos/email-marketing/qix/03-90-dias.png',
+          ],
+        },
+      ],
+    },
+    {
       id: 'ada-regua-crm',
       client: 'ADA Nutracêuticos',
       title: 'Régua de E-mail Marketing',
