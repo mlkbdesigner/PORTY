@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 const marqueeItems = ['UI/UX', '✦', 'BRANDING', '✦', 'LANDING PAGES', '✦', 'DESIGN SYSTEMS', '✦']
@@ -47,10 +48,10 @@ export default function Footer() {
               <div>
                 <p className="font-label text-white-mute mb-4">NAVEGAÇÃO</p>
                 <ul className="space-y-3 font-display text-xl text-white">
-                  <li><a href="#sobre" className="link-underline hover:text-lime transition">Sobre</a></li>
-                  <li><a href="#portfolio" className="link-underline hover:text-lime transition">Portfólio</a></li>
-                  <li><a href="#servicos" className="link-underline hover:text-lime transition">Serviços</a></li>
-                  <li><a href="#processo" className="link-underline hover:text-lime transition">Processo</a></li>
+                  <li><Link to="/#sobre" className="link-underline hover:text-lime transition">Sobre</Link></li>
+                  <li><Link to="/#portfolio" className="link-underline hover:text-lime transition">Portfólio</Link></li>
+                  <li><Link to="/#servicos" className="link-underline hover:text-lime transition">Serviços</Link></li>
+                  <li><Link to="/#processo" className="link-underline hover:text-lime transition">Processo</Link></li>
                 </ul>
               </div>
               <div>
@@ -78,9 +79,9 @@ export default function Footer() {
           <div className="mt-16 pt-8 border-t border-white/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-label text-white-mute">
             <span>© 2026 · MALU KLEIN · TODOS OS DIREITOS RESERVADOS</span>
             <span>DESIGNED &amp; BUILT IN RECIFE · PE</span>
-            <a href="#top" className="link-underline hover:text-lime transition flex items-center gap-2">
+            <Link to="/" className="link-underline hover:text-lime transition flex items-center gap-2">
               VOLTAR AO TOPO <span>↑</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
