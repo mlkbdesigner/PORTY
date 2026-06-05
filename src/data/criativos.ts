@@ -90,7 +90,7 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       id: 'ada-dia-das-maes',
       client: 'ADA Nutracêuticos',
       title: 'Campanha do Dia das Mães',
-      year: '2025',
+      year: '2026',
       description:
         'Direção criativa pra campanha de Dia das Mães — 4 combos especiais com brinde, cada um pensado pra um perfil de consumidora. Layout mãe + desdobramentos individuais.',
       master: '/criativos/ads/ada-nutraceuticos-dia-das-maes/master.png',
@@ -112,7 +112,7 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       id: 'belle-acessories',
       client: 'Belle Acessórios',
       title: 'Peças Avulsas',
-      year: '2025',
+      year: '2023',
       description:
         'Criativos avulsos pra Belle Acessórios — direção de imagem com foco em material natural (mármore, ouro, pérola) e copy editorial pra comunicar valor sem perder a leveza do feed.',
       rows: [
@@ -164,7 +164,7 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       id: 'qix-winback',
       client: 'QIX',
       title: 'Régua de Winback',
-      year: '2025',
+      year: '2026',
       description:
         'Fluxo de winback pra reativação de base — 3 disparos escalonados (4, 7 e 90 dias) com cupom progressivo, gatilhos de urgência e CTA de WhatsApp pra reabrir conversa antes do cliente esfriar.',
       rows: [
@@ -182,7 +182,7 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       id: 'ada-regua-crm',
       client: 'ADA Nutracêuticos',
       title: 'Régua de E-mail Marketing',
-      year: '2025',
+      year: '2026',
       description:
         'Régua de CRM completa pra base — do boas-vindas com cashback até reativação por aniversário, indicação de amigo e atualização de plataforma. Templates pensados pra inbox e jornada do consumidor.',
       rows: [
