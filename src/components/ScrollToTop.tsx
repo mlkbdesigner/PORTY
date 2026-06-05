@@ -6,19 +6,25 @@ export default function ScrollToTop() {
 
   useLayoutEffect(() => {
     const html = document.documentElement
+    const body = document.body
     const previousBehavior = html.style.scrollBehavior
     html.style.scrollBehavior = 'auto'
 
+    const goTop = () => {
+      window.scrollTo(0, 0)
+      html.scrollTop = 0
+      body.scrollTop = 0
+    }
+
     if (hash) {
-      const id = hash.slice(1)
-      const el = document.getElementById(id)
+      const el = document.getElementById(hash.slice(1))
       if (el) {
         el.scrollIntoView({ block: 'start' })
       } else {
-        window.scrollTo(0, 0)
+        goTop()
       }
     } else {
-      window.scrollTo(0, 0)
+      goTop()
     }
 
     requestAnimationFrame(() => {
