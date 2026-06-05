@@ -109,6 +109,32 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
   ],
   feed: [
     {
+      id: 'belle-acessories',
+      client: 'Belle Acessórios',
+      title: 'Peças Avulsas',
+      year: '2025',
+      description:
+        'Criativos avulsos pra Belle Acessórios — direção de imagem com foco em material natural (mármore, ouro, pérola) e copy editorial pra comunicar valor sem perder a leveza do feed.',
+      rows: [
+        {
+          label: 'Feed',
+          format: 'square',
+          pieces: [
+            '/criativos/feed/belle-acessories/feed-01.png',
+            '/criativos/feed/belle-acessories/feed-02.png',
+          ],
+        },
+        {
+          label: 'Stories',
+          format: 'portrait',
+          pieces: [
+            '/criativos/feed/belle-acessories/story-01.jpg',
+            '/criativos/feed/belle-acessories/story-02.jpg',
+          ],
+        },
+      ],
+    },
+    {
       id: 'forsun-feed',
       client: 'Forsun',
       title: 'Identidade no Feed',
