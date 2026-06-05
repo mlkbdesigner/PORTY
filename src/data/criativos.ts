@@ -66,7 +66,7 @@ export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> =
       id: 'voltys-eletrolitos',
       client: 'Voltys',
       title: 'Campanha de Eletrólitos',
-      year: '2025',
+      year: '2026',
       description:
         'Direção criativa pra mídia paga da Voltys (eletrólitos) — posicionamento "zero excessos, tudo o que precisa". Sistema com 10 ads pro feed e 10 desdobramentos verticais pra stories, mantendo a paleta clean e a hierarquia tipográfica da marca.',
       rows: [
