@@ -7,8 +7,7 @@ export default function ScrollToTop() {
   useLayoutEffect(() => {
     const html = document.documentElement
     const body = document.body
-    const previousBehavior = html.style.scrollBehavior
-    html.style.scrollBehavior = 'auto'
+    html.style.setProperty('scroll-behavior', 'auto', 'important')
 
     const goTop = () => {
       window.scrollTo(0, 0)
@@ -26,10 +25,6 @@ export default function ScrollToTop() {
     } else {
       goTop()
     }
-
-    requestAnimationFrame(() => {
-      html.style.scrollBehavior = previousBehavior
-    })
   }, [pathname, hash])
 
   return null

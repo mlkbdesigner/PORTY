@@ -1,5 +1,4 @@
 import Nav from '../components/Nav'
-import SmoothScroll from '../components/SmoothScroll'
 import SkillsMarquee from '../components/SkillsMarquee'
 import Hero from '../sections/Hero'
 import Sobre from '../sections/Sobre'
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-ink text-cream grain">
       <a href="#main-content" className="skip-link">Pular para o conteúdo</a>
-      <SmoothScroll />
       <Nav />
       <main id="main-content">
         <Hero />
