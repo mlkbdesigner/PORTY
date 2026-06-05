@@ -103,9 +103,10 @@ export default function Hero() {
             </div>
             <div className="pt-1">
               <div className="text-white/40 mb-1">Minhas áreas</div>
-              <div className="text-white">UI / UX</div>
+              <div className="text-white">Web Design</div>
               <div className="text-white">Branding</div>
-              <div className="text-white">Landing Pages</div>
+              <div className="text-white">Criativos &amp; Ads</div>
+              <div className="text-white">Design Gráfico</div>
             </div>
           </div>
 
