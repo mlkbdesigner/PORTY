@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Nav from '../../components/Nav'
@@ -25,10 +24,6 @@ function isCriativoCategory(v: string | undefined): v is CriativoCategory {
 
 export default function CriativosCategory() {
   const { category } = useParams<{ category: string }>()
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [category])
 
   if (!isCriativoCategory(category)) {
     return <Navigate to="/projeto/pecas-graficas" replace />

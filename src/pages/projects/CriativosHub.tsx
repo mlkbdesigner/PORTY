@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Nav from '../../components/Nav'
@@ -22,10 +21,6 @@ const accentBorder = {
 
 export default function CriativosHub() {
   const project = getProjectBySlug('pecas-graficas')
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   if (!project) return null
 

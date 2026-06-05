@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Nav from '../components/Nav'
@@ -11,10 +10,6 @@ const ease = [0.16, 1, 0.3, 1] as const
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
   const project = slug ? getProjectBySlug(slug) : undefined
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [slug])
 
   if (!project) {
     return (
