@@ -10,12 +10,18 @@ const contactLinks = [
   { label: 'Instagram', value: '@designedbyklein', href: 'https://instagram.com/designedbyklein' },
 ]
 
-const services = ['Web Design', 'Branding', 'Criativos & Ads', 'Outro']
+const services = ['Web Design', 'Branding', 'Criativos & Ads', 'Design Gráfico', 'Outro']
 const budgets = ['Até R$1k', 'R$1k — R$3k', 'R$3k — R$8k', '+R$8k']
+
+const WEB3FORMS_ACCESS_KEY = 'df931b24-8e50-432d-ba56-20a6a06ced26'
+
+type FormStatus = 'idle' | 'sending' | 'success' | 'error'
 
 export default function Contato() {
   const [selectedService, setSelectedService] = useState<string | null>(null)
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null)
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [errorMsg, setErrorMsg] = useState<string>('')
 
   return (
     <section id="contato" className="relative py-28 md:py-40 border-t border-white/15 overflow-hidden">
@@ -112,17 +118,51 @@ export default function Contato() {
 
             <form
               className="flex-1 flex flex-col border border-white/15 bg-neutral/30 p-6 md:p-10 space-y-8"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault()
+                if (status === 'sending') return
+
                 const form = e.currentTarget
                 const name = (form.elements.namedItem('name') as HTMLInputElement).value
                 const email = (form.elements.namedItem('email') as HTMLInputElement).value
                 const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value
-                const subject = encodeURIComponent(`[Portfolio] Novo projeto — ${name}`)
-                const body = encodeURIComponent(
-                  `Nome: ${name}\nEmail: ${email}\nServiço: ${selectedService || '—'}\nBudget: ${selectedBudget || '—'}\n\nMensagem:\n${message}`
-                )
-                window.location.href = `mailto:mlkbdesigner@gmail.com?subject=${subject}&body=${body}`
+
+                setStatus('sending')
+                setErrorMsg('')
+
+                try {
+                  const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Accept: 'application/json',
+                    },
+                    body: JSON.stringify({
+                      access_key: WEB3FORMS_ACCESS_KEY,
+                      from_name: 'Portfolio Malu Klein',
+                      subject: `[Portfolio] Novo projeto — ${name}`,
+                      name,
+                      email,
+                      servico: selectedService || '—',
+                      budget: selectedBudget || '—',
+                      message,
+                    }),
+                  })
+
+                  const data = await res.json()
+                  if (data.success) {
+                    setStatus('success')
+                    form.reset()
+                    setSelectedService(null)
+                    setSelectedBudget(null)
+                  } else {
+                    setStatus('error')
+                    setErrorMsg(data.message || 'Não rolou enviar. Tenta de novo ou me chama no e-mail.')
+                  }
+                } catch (err) {
+                  setStatus('error')
+                  setErrorMsg('Sem conexão. Tenta de novo ou me chama no e-mail.')
+                }
               }}
             >
               {/* Name */}
@@ -220,13 +260,30 @@ export default function Contato() {
                 />
               </div>
 
+              {/* Status feedback */}
+              {status === 'success' && (
+                <div className="border border-lime bg-lime/10 px-4 py-3 font-label text-lime flex items-center gap-2">
+                  <span>✓</span>
+                  MENSAGEM ENVIADA · RESPONDO EM ATÉ 24H
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="border border-pink bg-pink/10 px-4 py-3 font-label text-pink">
+                  ERRO · {errorMsg}
+                </div>
+              )}
+
               {/* Submit */}
               <div className="pt-4 mt-auto flex items-center justify-between">
                 <p className="font-label text-white-mute hidden md:block">
                   RESPOSTA EM ATÉ 24H
                 </p>
-                <button type="submit" className="btn-lime">
-                  Enviar mensagem →
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-lime disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {status === 'sending' ? 'Enviando...' : status === 'success' ? 'Enviar outra ↻' : 'Enviar mensagem →'}
                 </button>
               </div>
             </form>
