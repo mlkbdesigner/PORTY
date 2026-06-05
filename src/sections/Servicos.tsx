@@ -30,6 +30,15 @@ const services = [
     tags: ['Ads (Meta · TikTok)', 'E-mail Marketing', 'Social Media', 'Copy', 'Lançamentos', 'Direção Criativa'],
     accent: 'white',
   },
+  {
+    num: '04',
+    title: 'Design Gráfico',
+    subtitle: 'Print, editorial e impressos',
+    description:
+      'Cartazes, embalagens, catálogos, apresentações e peças editoriais. Direção visual pensada pra circular fora da tela com a mesma força do digital.',
+    tags: ['Editorial', 'Pôster', 'Embalagem', 'Catálogo', 'Apresentação', 'Impressos'],
+    accent: 'lime',
+  },
 ]
 
 const accentMap = {
@@ -88,7 +97,7 @@ export default function Servicos() {
               transition={{ duration: 0.8, delay: 0.55 }}
               className="mt-8 max-w-md text-lg text-white-dim text-pretty"
             >
-              Três frentes principais, sempre com{' '}
+              Quatro frentes principais, sempre com{' '}
               <span className="text-white">estratégia primeiro</span>, estética depois.
             </motion.p>
           </div>
