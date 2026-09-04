@@ -1,5 +1,11 @@
 export type Accent = 'lime' | 'pink' | 'white' | 'neutral'
 
+export interface CaseSection {
+  image: string
+  title: string
+  description: string
+}
+
 export interface Project {
   id: number
   slug: string
@@ -18,6 +24,11 @@ export interface Project {
   deliverables: string[]
   accent: Accent
   gallery?: string[]
+  caseStudy?: CaseSection[]
+  fullPreview?: {
+    desktop?: string
+    mobile?: string
+  }
   galleryBg?: string
 }
 
@@ -71,6 +82,80 @@ export const projects: Project[] = [
       '/projects/fenty/06-typography-colors.png',
       '/projects/fenty/07-landing-page.png',
       '/projects/fenty/09-thank-you.png',
+    ],
+  },
+  {
+    id: 5,
+    slug: 'ovomaltine-proteina',
+    title: 'Protein Crisp Ovomaltine',
+    year: '2026',
+    category: 'Landing Page',
+    keyword: 'LANDING PAGE',
+    tabLeft: '40%',
+    tags: ['Landing Page', 'Copywriting', 'E-commerce'],
+    description:
+      'Landing page pra ação exclusiva da Integralmedica — receber a Protein Crisp Ovomaltine recém-saída da fábrica. Copy e design com narrativa "da produção à primeira mordida" e mecânica de CEP pra reforçar exclusividade.',
+    longDescription:
+      'Landing page pra ação exclusiva da Integralmedica na Grande São Paulo — permitir que o consumidor receba a Protein Crisp Ovomaltine recém-saída da fábrica, antes da distribuição tradicional. Trabalhei copy e design da página inteira, transformando uma logística restrita em experiência de valor. A estética preto/vermelho e a tipografia bold reforçam a sensação de edição limitada e proximidade com a linha de fábrica — copy e hierarquia foram desenhadas juntas, com cada seção resolvendo uma etapa da persuasão sem redundância.',
+    cover: '/projects/ovomaltine-proteina/01-hero.png',
+    oldUrl: '',
+    role: 'Copy & UI Design',
+    deliverables: ['Copywriting', 'UI Design', 'Art Direction'],
+    accent: 'pink',
+    galleryBg: '#0A0000',
+    fullPreview: {
+      desktop: '/projects/ovomaltine-proteina/full-desktop.png',
+      mobile: '/projects/ovomaltine-proteina/full-mobile.png',
+    },
+    caseStudy: [
+      {
+        image: '/projects/ovomaltine-proteina/01-hero.png',
+        title: 'Hero — Da fábrica direto para você',
+        description:
+          'Abertura direta: headline afirmativa + verificador de CEP no primeiro dobra e vídeo curto do produto. A ideia foi criar tração imediata — comunicar a oferta e já pedir a ação (CEP) sem forçar o usuário a rolar pra entender.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/02-experiencia-exclusiva.png',
+        title: 'Uma experiência exclusiva Integralmedica',
+        description:
+          'Contextualização emocional da proposta: não é só uma compra, é acesso a um momento que quase ninguém vê. A imagem da barrinha na mão comunica proximidade e escala real, evitando o hero shot institucional que distancia.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/03-timeline-fabrica.png',
+        title: 'Da produção à primeira mordida',
+        description:
+          'Visualização da jornada em 4 estágios (Produção → Separação → Envio → Primeira mordida). Ancora a promessa abstrata em algo tangível — o consumidor vê o caminho e entende o valor concreto do "recém-saída da fábrica".',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/04-como-funciona.png',
+        title: 'Como funciona — 3 passos',
+        description:
+          'Passo a passo objetivo (quantidade → CEP → recebimento) sobre fundo vermelho vibrante pra quebrar o ritmo escuro das seções anteriores. Remove fricção mental: se parece fácil de fazer, parece fácil de comprar.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/05-produto.png',
+        title: 'Card de produto & escassez',
+        description:
+          'Momento da conversão. Card completo com preço em destaque, seletor de sabor e ancoragem de escassez ("Lote limitado"). Tudo o que o usuário precisa pra decidir sem sair da seção.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/06-cep.png',
+        title: 'Verificador de CEP',
+        description:
+          'Repetição estratégica do formulário do hero. Não é redundância: é uma segunda oportunidade de conversão pra quem chegou até aqui sem ter preenchido antes, agora já convencido pela narrativa.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/07-faq.png',
+        title: 'FAQ — objeções mapeadas',
+        description:
+          'Cobre as 3 dúvidas previsíveis: "é diferente do produto tradicional?", "por que só Grande São Paulo?", "posso comprar mais de uma caixa?". Cada resposta remove uma barreira específica antes do CTA final.',
+      },
+      {
+        image: '/projects/ovomaltine-proteina/08-cta-final.png',
+        title: 'CTA final — a fábrica abriu as portas',
+        description:
+          'Fechamento retomando a headline principal com virada de tom: "A fábrica abriu as portas. Agora é a sua vez." Dá circularidade à narrativa e reforça o convite com o mesmo peso da abertura.',
+      },
     ],
   },
   {

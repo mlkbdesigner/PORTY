@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import Nav from '../components/Nav'
@@ -6,6 +7,112 @@ import { getProjectBySlug, projects, accentBgColor, isDarkAccent } from '../data
 import CatMatchCaseStudy from './projects/CatMatchCaseStudy'
 
 const ease = [0.16, 1, 0.3, 1] as const
+
+function PreviewFrame({
+  src,
+  label,
+  title,
+  className = '',
+}: {
+  src: string
+  label: string
+  title: string
+  className?: string
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (scrollRef.current) scrollRef.current.scrollTop = 0
+  }, [src])
+
+  return (
+    <div className={`flex flex-col gap-4 ${className}`}>
+      <div className="flex items-center justify-between">
+        <span className="font-label text-white-mute">{label}</span>
+        <a
+          href={src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-label text-white-dim hover:text-lime transition-colors"
+        >
+          TELA CHEIA ↗
+        </a>
+      </div>
+      <div
+        ref={scrollRef}
+        className="relative overflow-y-auto overflow-x-hidden border border-white/15 bg-white/5"
+        style={{
+          maxHeight: '80vh',
+          overscrollBehavior: 'contain',
+          scrollbarGutter: 'stable',
+          overflowAnchor: 'none',
+        }}
+      >
+        <img
+          src={src}
+          alt={`${title} — ${label}`}
+          className="w-full h-auto block"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  )
+}
+
+function FullPreviewSection({
+  preview,
+  title,
+}: {
+  preview: { desktop?: string; mobile?: string }
+  title: string
+}) {
+  const { desktop, mobile } = preview
+  if (!desktop && !mobile) return null
+
+  const hasBoth = !!desktop && !!mobile
+
+  return (
+    <section className="relative py-20 md:py-28 border-t border-white/10 bg-ink">
+      <div className="mx-auto max-w-[1600px] px-6 md:px-20">
+        <div className="mb-10 md:mb-14">
+          <p className="font-label text-lime mb-3">O RESULTADO</p>
+          <h3
+            className="font-display text-white leading-[0.9]"
+            style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+          >
+            A landing, na íntegra.
+          </h3>
+          <p className="mt-4 text-white-dim text-base md:text-lg max-w-xl">
+            Role dentro dos quadros pra ver a página como o usuário veria. Se quiser o raciocínio por trás de cada seção, ele vem logo abaixo.
+          </p>
+        </div>
+
+        <div
+          className={`grid gap-6 md:gap-10 ${
+            hasBoth ? 'md:grid-cols-12' : 'grid-cols-1'
+          }`}
+        >
+          {desktop && (
+            <PreviewFrame
+              src={desktop}
+              label="DESKTOP"
+              title={title}
+              className={hasBoth ? 'md:col-span-9' : ''}
+            />
+          )}
+          {mobile && (
+            <PreviewFrame
+              src={mobile}
+              label="MOBILE"
+              title={title}
+              className={hasBoth ? 'md:col-span-3 max-w-[380px] mx-auto md:mx-0' : 'max-w-[380px] mx-auto'}
+            />
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -109,9 +216,11 @@ export default function ProjectDetail() {
             >
               <div className="md:col-span-6">
                 <p className={`font-label mb-3 ${subColor}`}>SOBRE O PROJETO</p>
-                <p className={`text-base md:text-lg leading-relaxed ${textColor}`}>
-                  {project.longDescription}
-                </p>
+                <div className={`text-base md:text-lg leading-relaxed ${textColor} space-y-4`}>
+                  {project.longDescription.split('\n\n').map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
 
               <div className="md:col-span-3">
@@ -160,6 +269,85 @@ export default function ProjectDetail() {
         {/* Custom case study — CatMatch */}
         {project.slug === 'catmatch' ? (
           <CatMatchCaseStudy coverUrl={project.cover} />
+        ) : project.caseStudy && project.caseStudy.length > 0 ? (
+          <>
+            {project.fullPreview && (project.fullPreview.desktop || project.fullPreview.mobile) && (
+              <FullPreviewSection preview={project.fullPreview} title={project.title} />
+            )}
+            <section
+              className="relative py-16 md:py-28"
+              style={{ backgroundColor: project.galleryBg ?? '#0A0A0A' }}
+            >
+              <div className="mx-auto max-w-[1600px] px-6 md:px-20 flex flex-col gap-20 md:gap-32">
+                <div className="mb-4 md:mb-8">
+                  <p className="font-label text-lime mb-3">CASE STUDY · SEÇÃO POR SEÇÃO</p>
+                  <h3
+                    className="font-display text-white leading-[0.9]"
+                    style={{ fontSize: 'clamp(2rem, 5vw, 4rem)' }}
+                  >
+                    O raciocínio por trás.
+                  </h3>
+                  <p className="mt-4 text-white-dim text-base md:text-lg max-w-xl">
+                    Cada seção da landing resolve uma etapa da persuasão. Abaixo, o que foi pensado em cada uma.
+                  </p>
+                </div>
+              {project.caseStudy.map((section, i) => {
+                const imageRight = i % 2 === 1
+                return (
+                  <motion.div
+                    key={section.image}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    transition={{ duration: 0.9, ease }}
+                    className="grid md:grid-cols-12 gap-8 md:gap-16 items-center"
+                  >
+                    <div
+                      className={`md:col-span-7 ${imageRight ? 'md:order-2' : 'md:order-1'}`}
+                    >
+                      <img
+                        src={section.image}
+                        alt={`${project.title} — ${section.title}`}
+                        className="w-full h-auto block border border-white/10"
+                        loading={i === 0 ? 'eager' : 'lazy'}
+                      />
+                    </div>
+                    <div
+                      className={`md:col-span-5 ${imageRight ? 'md:order-1' : 'md:order-2'}`}
+                    >
+                      <p className="font-label text-white-mute mb-4">
+                        SEÇÃO · 0{i + 1} / 0{project.caseStudy!.length}
+                      </p>
+                      <h3
+                        className="font-display text-white leading-[0.95] mb-6"
+                        style={{ fontSize: 'clamp(1.75rem, 3vw, 2.75rem)' }}
+                      >
+                        {section.title}
+                      </h3>
+                      <p className="text-white-dim text-base md:text-lg leading-relaxed">
+                        {section.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                )
+              })}
+              </div>
+
+              {project.liveUrl && (
+                <div className="py-16 md:py-24 text-center px-6">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 px-6 py-4 border-2 border-lime text-lime hover:bg-lime hover:text-ink transition-all duration-300"
+                  >
+                    <span className="font-label">VER PROJETO LIVE</span>
+                    <span className="group-hover:translate-x-1 transition-transform">↗</span>
+                  </a>
+                </div>
+              )}
+            </section>
+          </>
         ) : project.gallery && project.gallery.length > 0 ? (
           <section
             className="relative py-12 md:py-20"
