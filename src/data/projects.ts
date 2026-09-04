@@ -39,17 +39,17 @@ export const projects: Project[] = [
     title: 'Criativos',
     year: '2022 — 2026',
     category: 'Branding',
-    keyword: 'SOCIAL MEDIA',
+    keyword: 'DESIGN GRÁFICO',
     tabLeft: '3%',
-    tags: ['Social Media', 'Design Gráfico', 'Multi-cliente'],
+    tags: ['Social Media', 'E-mail Marketing', 'Multi-cliente'],
     description:
-      'Direção criativa de social media pra múltiplos clientes desde 2022 — campanhas, lançamentos e conteúdo recorrente. Cada marca com seu sistema visual replicável e voz própria.',
+      'Direção criativa pra múltiplos clientes desde 2022 — campanhas de social media, e-mail marketing e conteúdo recorrente. Cada marca com seu sistema visual replicável e voz própria.',
     longDescription:
-      'Direção criativa contínua pra múltiplos clientes desde 2022 — campanhas de lançamento, conteúdo recorrente, sistemas visuais aplicados e peças pontuais de tração. Cada cliente exige uma voz própria e um sistema replicável: o trabalho é fazer cada marca ficar reconhecível dentro do ruído do feed, sem trair a estratégia. Volume, consistência e adaptação entre tons radicalmente diferentes — do editorial ao performático, do sofisticado ao espontâneo.',
+      'Direção criativa contínua pra múltiplos clientes desde 2022 — campanhas de lançamento, peças de social media, e-mail marketing, conteúdo recorrente e sistemas visuais aplicados. Cada cliente exige uma voz própria e um sistema replicável: o trabalho é fazer cada marca ficar reconhecível dentro do ruído do feed e da inbox, sem trair a estratégia. Volume, consistência e adaptação entre tons radicalmente diferentes — do editorial ao performático, do sofisticado ao espontâneo.',
     cover: 'https://cdn.myportfolio.com/47fe971d-a65e-45a7-afba-3ca6fcea238c/60570813-114b-4d2f-bc3c-4c83afb58531_carw_202x158x1920.jpg?h=c92dc8f9cf90d55c7705085414f9a6bc',
     oldUrl: 'https://mlkb.myportfolio.com/social-media',
     role: 'Graphic Design',
-    deliverables: ['Posts', 'Campanhas', 'Identidade'],
+    deliverables: ['Posts', 'Campanhas', 'E-mails'],
     accent: 'white',
   },
   {
