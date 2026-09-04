@@ -6,36 +6,36 @@ const services = [
   {
     num: '01',
     title: 'Web Design',
-    subtitle: 'Sites e LPs que convertem',
+    subtitle: 'Sites institucionais · Landing pages · Produtos digitais · UI/UX',
     description:
-      'Do wireframe ao site no ar. UI/UX, landing pages de alta conversão e produtos digitais — sempre com foco em usabilidade, performance e identidade de marca.',
+      'Do wireframe ao site no ar. Foco em usabilidade, performance e identidade de marca — pra experiências que convertem e representam quem tá por trás.',
     tags: ['UI/UX', 'Landing Pages', 'Design System', 'Prototipação', 'Conversão', 'A/B Testing', 'Mobile First', 'Acessibilidade'],
     accent: 'lime',
   },
   {
     num: '02',
     title: 'Branding',
-    subtitle: 'Identidade que comunica valor',
+    subtitle: 'Identidade visual · Logo · Manual de marca · Rebrand',
     description:
-      'Criação de identidade visual completa — logo, tipografia, paleta, manual de marca e aplicações. Para marcas que querem deixar uma marca de verdade.',
-    tags: ['Logo', 'Manual de Marca', 'Tipografia', 'Paleta', 'Naming', 'Social Kit'],
+      'Marcas construídas do conceito ao sistema — logo, tipografia, paleta, aplicações. Pra ficar reconhecível e escalar sem perder personalidade.',
+    tags: ['Logo', 'Manual de Marca', 'Tipografia', 'Paleta', 'Social Kit'],
     accent: 'pink',
   },
   {
     num: '03',
     title: 'Criativos & Ads',
-    subtitle: 'Performance que vende',
+    subtitle: 'Anúncios · Criativos para feed · E-mail marketing · Banners para site · Direção criativa',
     description:
-      'Criativos de ads, e-mail marketing e peças de social media — pensados pra performar em tráfego pago, lançamentos e nutrição. Direção, copy e execução em fluxo contínuo.',
+      'Peças pra tráfego pago, nutrição de base e conteúdo recorrente — pensadas pra performar em cada canal. Direção, copy e execução em fluxo contínuo.',
     tags: ['Ads (Meta · TikTok)', 'E-mail Marketing', 'Social Media', 'Copy', 'Lançamentos', 'Direção Criativa'],
     accent: 'white',
   },
   {
     num: '04',
     title: 'Design Gráfico',
-    subtitle: 'Print, editorial e impressos',
+    subtitle: 'Editorial · Embalagem · Cartaz · Catálogo · Apresentação',
     description:
-      'Cartazes, embalagens, catálogos, apresentações e peças editoriais. Direção visual pensada pra circular fora da tela com a mesma força do digital.',
+      'Peças impressas e editoriais que circulam fora da tela com a mesma força do digital — direção visual pensada pro papel, pro ponto físico e pra memória.',
     tags: ['Editorial', 'Pôster', 'Embalagem', 'Catálogo', 'Apresentação', 'Impressos'],
     accent: 'lime',
   },
