@@ -118,10 +118,10 @@ export default function Hero() {
             </div>
             <div className="pt-1">
               <div className="text-white/40 mb-1">Clientes recentes</div>
-              <div className="text-white">Belle Acessories</div>
-              <div className="text-white">Forsun</div>
-              <div className="text-white">Conoti</div>
+              <div className="text-white">Integralmedica</div>
+              <div className="text-white">Francis</div>
               <div className="text-white">Voltys</div>
+              <div className="text-white">ADA Nutracêuticos</div>
             </div>
           </div>
         </div>
