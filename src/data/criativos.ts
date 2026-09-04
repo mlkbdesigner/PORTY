@@ -63,6 +63,38 @@ export const categoryMeta: Record<CriativoCategory, CategoryMeta> = {
 export const campaignsByCategory: Record<CriativoCategory, CriativoCampaign[]> = {
   anuncios: [
     {
+      id: 'francis-relancamento-classicos',
+      client: 'Francis',
+      title: 'Re-lançamento dos Clássicos',
+      year: '2026',
+      description:
+        'Direção criativa pro re-lançamento da linha de clássicos da Francis — sistema com 5 peças pro feed e 5 desdobramentos verticais pra stories, com tratamento visual dos produtos e hierarquia tipográfica destacando o retorno dos favoritos.',
+      rows: [
+        {
+          label: 'Feed',
+          format: 'square',
+          pieces: [
+            '/criativos/ads/francis/feed-01.png',
+            '/criativos/ads/francis/feed-02.png',
+            '/criativos/ads/francis/feed-03.png',
+            '/criativos/ads/francis/feed-04.png',
+            '/criativos/ads/francis/feed-05.png',
+          ],
+        },
+        {
+          label: 'Stories',
+          format: 'portrait',
+          pieces: [
+            '/criativos/ads/francis/story-01.png',
+            '/criativos/ads/francis/story-02.png',
+            '/criativos/ads/francis/story-03.png',
+            '/criativos/ads/francis/story-04.png',
+            '/criativos/ads/francis/story-05.png',
+          ],
+        },
+      ],
+    },
+    {
       id: 'voltys-eletrolitos',
       client: 'Voltys',
       title: 'Campanha de Eletrólitos',
